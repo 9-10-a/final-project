@@ -1,0 +1,17 @@
+
+  <div class="regContainer">
+    <form class="regForm"action="">
+      <input type="text" name="fName" placeholder="First Name" [(ngModel)]="user.firstName">
+      <br>
+      <input type="text" name="lName" placeholder="Last Name" [(ngModel)]="user.lastName">
+      <br>
+      <input type="text" name="email" placeholder="Email Address" [(ngModel)]="user.email">
+      <br>
+      <input type="text" name="userName" placeholder="User Name" [(ngModel)]="user.userName">
+      <br>
+      <input type="password" name="password" placeholder="Password"[(ngModel)]="user.password">
+      <br>
+      <button (click)="register()">Submit</button>
+    </form>
+  <h4>Already a member?<a href="#"> Click to Login</a></h4>
+  </div>
