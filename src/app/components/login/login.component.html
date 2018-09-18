@@ -1,0 +1,12 @@
+<div>
+  <h1>Login</h1>
+  Email<br>
+  <input type="email" placeholder="Email" [(ngModel)]="user.email"/><br>
+  Password<br>
+  <input type="password" placeholder="Password" [(ngModel)]="user.password"/><br>
+  <button (click)="login()">Login</button>
+  <div>
+    Not a member, <a href="/register">register here</a>
+  </div>
+</div>
+
