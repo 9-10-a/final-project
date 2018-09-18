@@ -11,13 +11,13 @@ export class LoginComponent implements OnInit {
   user: any;
 
   login() {
-    this.userService.login(this.user).subscribe((data: any) => {
+    this.usersService.login(this.user).subscribe((data: any) => {
       localStorage.setItem('token', data.token);
       this.router.navigate(['/home']);
     });
   }
 
-  constructor(private userService: UsersService, private router: Router) {}
+  constructor(private usersService: UsersService, private router: Router) {}
 
   ngOnInit() {
     this.user = {};
