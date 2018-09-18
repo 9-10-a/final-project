@@ -7,17 +7,16 @@ import { UsersService } from '../../services/users.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  user: any
+  user: any;
 
   register() {
     this.usersService.register(this.user).subscribe((data: any) => {
-      localStorage.setItem('token', data.token)
+      localStorage.setItem('token', data.token);
     });
   }
-  constructor(private usersService: UsersService) { }
+  constructor(private usersService: UsersService) {}
 
   ngOnInit() {
-    this.user = {}
+    this.user = {};
   }
-
 }

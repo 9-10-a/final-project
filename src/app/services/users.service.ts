@@ -5,7 +5,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UsersService {
-
   register(user) {
     return this.http.post(`${window.location.origin}/users/register`, user);
   }
@@ -14,7 +13,5 @@ export class UsersService {
     return this.http.post(`${window.location.origin}/users/login`, user);
   }
 
-  constructor(private http: HttpClient) {
-
-  }
+  constructor(private http: HttpClient) {}
 }
