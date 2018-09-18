@@ -31,7 +31,7 @@ let UserSchema = new mongoose.Schema({
     default: Date.now
   },
   _id: {
-    type: INTEGER,
+    type: Number,
     autoIncrement: true
   }
 });
