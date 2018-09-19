@@ -8,7 +8,7 @@ let mongoose = require('mongoose');
 
 //this is the connection to mongodb dlc
 mongoose.connect(
-  'mongodb://WCTRD:#18Acoder5@ds131551.mlab.com:31551/final-project'
+  'mongodb://cliff:cliff1@ds131551.mlab.com:31551/final-project'
 );
 
 // express config
