@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   register() {
     this.usersService.register(this.user).subscribe((data: any) => {
       localStorage.setItem('token', data.token);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/login']);
     });
   }
   constructor(private usersService: UsersService, private router: Router) {}
