@@ -6,9 +6,9 @@ const cors = require('cors');
 //added mongoose to allow connection to Mongodb dlc
 let mongoose = require('mongoose');
 
-//this is the connection to mongodb dlc
+//this is the connection to mongodb
 mongoose.connect(
-  'mongodb://WCTRD:#18Acoder5@ds131551.mlab.com:31551/final-project'
+  'mongodb://cliff:cliff1@ds131551.mlab.com:31551/final-project'
 );
 
 // express config
