@@ -8,8 +8,7 @@ let mongoose = require('mongoose');
 
 //this is the connection to mongodb
 mongoose.connect(
-  'mongodb://cliff:cliff1@ds131551.mlab.com:31551/final-project'
-);
+  'mongodb://cliff:cliff1@ds131551.mlab.com:31551/final-project', { useNewUrlParser: true } );
 
 // express config
 const app = express();
