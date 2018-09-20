@@ -19,10 +19,11 @@ import { RegisterComponent } from './components/register/register.component';
 import { UsersService } from './services/users.service';
 import { ElogComponent } from './components/elog/elog.component';
 import { HomeComponent } from './components/home/home.component';
+import { LogCreateComponent } from './components/log-create/log-create.component';
 
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent, ElogComponent, HomeComponent],
+  declarations: [AppComponent, RegisterComponent, LoginComponent, ElogComponent, HomeComponent, LogCreateComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
