@@ -16,14 +16,13 @@ import {
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { UsersService } from './services/users.service';
-import { ElogComponent } from './components/elog/elog.component';
 import { HomeComponent } from './components/home/home.component';
-import { LogCreateComponent } from './components/log-create/log-create.component';
-
+import { UsersService } from './services/users.service';
+import { CreateComponent } from './components/create/create.component';
+import { ElogComponent } from './components/elog/elog.component';
 
 @NgModule({
-  declarations: [AppComponent, RegisterComponent, LoginComponent, ElogComponent, HomeComponent, LogCreateComponent],
+  declarations: [AppComponent,  LoginComponent, RegisterComponent,  HomeComponent, CreateComponent, ElogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
