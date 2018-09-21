@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+let passport = require('passport');
+
 //added mongoose to allow connection to Mongodb dlc
 let mongoose = require('mongoose');
 
@@ -13,6 +15,8 @@ mongoose.connect(
 // express config
 const app = express();
 app.use(bodyParser.json());
+app.use(passport.initialize());
+
 
 // !!! DEVELOPMENT ONLY (start) !!! //
 
@@ -25,7 +29,7 @@ app.use(bodyParser.json());
 
 // !!! DEVELOPMENT ONLY (end) !!! //
 
-require('./models/User');
+require('./models/user');
 const users = require('./routes/users');
 app.use('/users', users);
 
