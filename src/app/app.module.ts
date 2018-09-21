@@ -16,9 +16,9 @@ import {
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { UserService } from './services/user.service';
 import { ElogComponent } from './components/elog/elog.component';
 import { HomeComponent } from './components/home/home.component';
+import { CreateComponent } from './components/create/create.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +26,8 @@ import { HomeComponent } from './components/home/home.component';
     RegisterComponent,
     LoginComponent,
     ElogComponent,
-    HomeComponent
+    HomeComponent,
+    CreateComponent
   ],
   imports: [
     BrowserModule,
