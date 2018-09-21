@@ -16,13 +16,18 @@ import {
 import { AppComponent } from './app.component';
 import { LoginComponent } from '../app/components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { HomeComponent } from './components/home/home.component';
-import { UsersService } from './services/users.service';
-import { CreateComponent } from './components/create/create.component';
+import { UserService } from './services/user.service';
 import { ElogComponent } from './components/elog/elog.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent,  LoginComponent, RegisterComponent,  HomeComponent, CreateComponent, ElogComponent],
+  declarations: [
+    AppComponent,
+    RegisterComponent,
+    LoginComponent,
+    ElogComponent,
+    HomeComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -34,8 +39,9 @@ import { ElogComponent } from './components/elog/elog.component';
     MatToolbarModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
-    HttpClientModule],
-  providers: [UsersService],
+    HttpClientModule
+  ],
+  providers: [],
 
   bootstrap: [AppComponent]
 })
