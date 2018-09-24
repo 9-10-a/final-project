@@ -1,44 +1,52 @@
-// module imports
-const express = require('express');
-const path = require('path');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-let passport = require('passport');
+const app = require("./backend/app");
+const debug = require("debug")("node-angular");
+const http = require("http");
 
-//added mongoose to allow connection to Mongodb dlc
-let mongoose = require('mongoose');
+const normalizePort = val => {
+  var port = parseInt(val, 10);
 
-//this is the connection to mongodb
-mongoose.connect(
-  'mongodb://cliff:cliff1@ds131551.mlab.com:31551/final-project', { useNewUrlParser: true } );
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
 
-// express config
-const app = express();
-app.use(bodyParser.json());
-app.use(passport.initialize());
+  if (port >= 0) {
+    // port number
+    return port;
+  }
 
+  return false;
+};
 
-// !!! DEVELOPMENT ONLY (start) !!! //
+const onError = error => {
+  if (error.syscall !== "listen") {
+    throw error;
+  }
+  const bind = typeof addr === "string" ? "pipe " + addr : "port " + port;
+  switch (error.code) {
+    case "EACCES":
+      console.error(bind + " requires elevated privileges");
+      process.exit(1);
+      break;
+    case "EADDRINUSE":
+      console.error(bind + " is already in use");
+      process.exit(1);
+      break;
+    default:
+      throw error;
+  }
+};
 
-//var corsOptions = {
-//   origin: 'http://localhost:4200',
-//  optionsSuccessStatus: 200
-// }
+const onListening = () => {
+  const addr = server.address();
+  const bind = typeof addr === "string" ? "pipe " + addr : "port " + port;
+  debug("Listening on " + bind);
+};
 
-//app.use(cors(corsOptions))
+const port = normalizePort(process.env.PORT || "3000");
+app.set("port", port);
 
-// !!! DEVELOPMENT ONLY (end) !!! //
-
-require('./models/user');
-const users = require('./routes/users');
-app.use('/users', users);
-
-var distDir = __dirname + '/dist/group-project/';
-app.use(express.static(distDir));
-
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname + '/dist/group-project/'));
-});
-
-// server config
-app.listen(process.env.PORT || 8080);
+const server = http.createServer(app);
+server.on("error", onError);
+server.on("listening", onListening);
+server.listen(port);
