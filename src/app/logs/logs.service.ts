@@ -51,7 +51,7 @@ export class LogsService {
     const log: Log = { id: null, title: title, content: content };
     this.http
       .post<{ message: string; logId: string }>(
-        'http://localhost:3000/users/logs',
+        'http://localhost:3000/api/logs',
         log
       )
       .subscribe(responseData => {
@@ -68,7 +68,7 @@ export class LogsService {
   updateLog(id: string, title: string, content: string) {
     const log: Log = { id: id, title: title, content: content };
     this.http
-      .put('http://localhost:3000/users/logs/' + id, log)
+      .put('http://localhost:3000/api/logs/' + id, log)
       .subscribe(response => {
         const updatedLogs = [...this.logs];
         const oldLogIndex = updatedLogs.findIndex(l => l.id === log.id);
@@ -83,7 +83,7 @@ export class LogsService {
   // delete log
   deleteLog(logId: string) {
     this.http
-      .delete('http://localhost:3000/users/logs/' + logId)
+      .delete('http://localhost:3000/api/logs/' + logId)
       .subscribe(() => {
         // used to keep log list updated when post is deleted
         const updatedLogs = this.logs.filter(log => log.id !== logId);
