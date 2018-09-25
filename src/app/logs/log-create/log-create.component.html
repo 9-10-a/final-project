@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onSaveLog(logForm)" #logForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <!-- ? used to force angular to check whether a log exist before it tries to populate the field to avoid errors. -->
+      <input matInput type="text" name="title" [ngModel]="log?.title" required minlength="3" placeholder="Log Title"
+        #title="ngModel">
+      <mat-error *ngIf="title.invalid">Please enter your workout</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <textarea matInput rows="4" name="content" [ngModel]="log?.content" required placeholder="Log Content" #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Tell us where all that sweat came from.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Save Workout</button>
+  </form>
+</mat-card>
