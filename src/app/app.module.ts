@@ -14,7 +14,7 @@ import {
 
 import { AppComponent } from './app.component';
 import { LogCreateComponent } from './logs/log-create/log-create.component';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './components/header/header.component';
 import { LogListComponent } from './logs/log-list/log-list.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './users/signup/signup.component';
