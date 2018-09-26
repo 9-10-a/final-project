@@ -45,7 +45,6 @@ import { HomepageComponent } from './homepage/homepage.component';
     HttpClientModule
   ],
   providers: [],
-
   bootstrap: [AppComponent]
 })
 export class AppModule {}
