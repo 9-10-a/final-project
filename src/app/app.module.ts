@@ -1,9 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module';
 import {
   MatInputModule,
   MatCardModule,
@@ -14,20 +13,23 @@ import {
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from '../app/components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { ElogComponent } from './components/elog/elog.component';
-import { HomeComponent } from './components/home/home.component';
-import { CreateComponent } from './components/create/create.component';
+import { LogCreateComponent } from './logs/log-create/log-create.component';
+import { HeaderComponent } from './header/header.component';
+import { LogListComponent } from './logs/log-list/log-list.component';
+import { AppRoutingModule } from './app-routing.module';
+import { SignupComponent } from './users/signup/signup.component';
+import { LoginComponent } from './users/login/login.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterComponent,
+    LogCreateComponent,
+    HeaderComponent,
+    LogListComponent,
+    SignupComponent,
     LoginComponent,
-    ElogComponent,
-    HomeComponent,
-    CreateComponent
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

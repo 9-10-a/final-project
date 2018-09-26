@@ -1,25 +1,26 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { ElogComponent } from './components/elog/elog.component';
-import { CreateComponent } from './components/create/create.component';
+import { LogListComponent } from './logs/log-list/log-list.component';
+import { LogCreateComponent } from './logs/log-create/log-create.component';
+import { LoginComponent } from './users/login/login.component';
+import { SignupComponent } from './users/signup/signup.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = [
+  // log workout paths
+  { path: 'log', component: LogListComponent },
+  { path: 'create', component: LogCreateComponent },
+  { path: 'edit/:logId', component: LogCreateComponent },
+  // user paths
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'log', component: ElogComponent },
-  { path: 'create', component: CreateComponent }
+  { path: 'signup', component: SignupComponent },
+  { path: 'home', component: HomepageComponent }
 ];
 
 @NgModule({
-  imports: [CommonModule, RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  declarations: []
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}
