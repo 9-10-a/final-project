@@ -2,11 +2,12 @@
 <mat-accordion multi="true" *ngIf="logs.length > 0 && !isLoading">
   <mat-expansion-panel *ngFor="let log of logs">
     <mat-expansion-panel-header>
-      {{ log.title }}
+      {{ log.date }}:
+      <!-- {{ log.title }} -->
     </mat-expansion-panel-header>
-    <h3>SWEAT LOGGED: </h3>
+    <h5>SWEAT LOGGED: </h5>
     <p>{{ log.content }}</p>
-    <h3>DURATION/SCORE: </h3>
+    <h5>DURATION: </h5>
     <p>{{ log.duration }}</p>
     <mat-action-row>
       <a mat-button color="primary" [routerLink]="['/edit', log.id]">EDIT</a>

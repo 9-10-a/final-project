@@ -1,6 +1,18 @@
 <mat-card>
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <form (submit)="onSaveLog(logForm)" #logForm="ngForm" *ngIf="!isLoading">
+      <mat-form-field>
+          <input matInput name="date" [matDatepicker]="picker" [ngModel]="log?.date" required placeholder="Choose a date" #date="ngModel">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="date.invalid">Please enter your workout date</mat-error>
+        </mat-form-field>
+
+    <!-- <mat-form-field>
+      <input matInput type="date" name="date" [ngModel]="log?.date" required minlength="3" placeholder="Log date"
+        #date="ngModel">
+      <mat-error *ngIf="date.invalid">Please enter your workout date</mat-error>
+    </mat-form-field> -->
     <mat-form-field>
       <!-- ? used to force angular to check whether a log exist before it tries to populate the field to avoid errors. -->
       <input matInput type="text" name="title" [ngModel]="log?.title" required minlength="3" placeholder="Log Title"

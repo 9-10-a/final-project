@@ -22,6 +22,7 @@ export class LogsService {
         map(logData => {
           return logData.logs.map(log => {
             return {
+              date: log.date,
               title: log.title,
               content: log.content,
               id: log._id,
@@ -43,13 +44,13 @@ export class LogsService {
 
   // gets the log information for editing a post - loaded into the log create
   getLog(id: string) {
-    return this.http.get<{ _id: string; title: string; content: string; duration: string }>(
+    return this.http.get<{ _id: string; date: Date, title: string; content: string; duration: string }>(
       'http://localhost:3000/api/logs/' + id
     );
   }
   // Creating a new log
-  addLog(title: string, content: string, duration: string) {
-    const log: Log = { id: null, title: title, content: content, duration: duration };
+  addLog(date: Date, title: string, content: string, duration: string) {
+    const log: Log = { id: null, date: date, title: title, content: content, duration: duration };
     this.http
       .post<{ message: string; logId: string }>(
         'http://localhost:3000/api/logs',
@@ -66,8 +67,8 @@ export class LogsService {
   }
 
   // Edit a log
-  updateLog(id: string, title: string, content: string, duration: string) {
-    const log: Log = { id: id, title: title, content: content, duration: duration };
+  updateLog(id: string, date: Date, title: string, content: string, duration: string) {
+    const log: Log = { id: id, date: date, title: title, content: content, duration: duration };
     this.http
       .put('http://localhost:3000/api/logs/' + id, log)
       .subscribe(response => {

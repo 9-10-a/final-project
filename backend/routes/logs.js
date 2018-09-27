@@ -4,6 +4,7 @@ const router = express.Router();
 
 router.post('', (req, res, next) => {
   const log = new Log({
+    date: req.body.date,
     title: req.body.title,
     content: req.body.content,
     duration: req.body.duration
@@ -21,6 +22,7 @@ router.post('', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
   const log = new Log({
     _id: req.body.id,
+    date: req.body.date,
     title: req.body.title,
     content: req.body.content,
     duration: req.body.duration
