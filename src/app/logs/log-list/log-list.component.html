@@ -2,7 +2,7 @@
 <mat-accordion multi="true" *ngIf="logs.length > 0 && !isLoading">
   <mat-expansion-panel *ngFor="let log of logs">
     <mat-expansion-panel-header>
-      {{ log.date }}:
+      {{ log.date | date: 'MMM dd, yyyy'}}
       <!-- {{ log.title }} -->
     </mat-expansion-panel-header>
     <h5>SWEAT LOGGED: </h5>
