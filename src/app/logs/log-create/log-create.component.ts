@@ -11,6 +11,7 @@ import { Log } from '../log.model';
   styleUrls: ['./log-create.component.css']
 })
 export class LogCreateComponent implements OnInit {
+  enteredDate = Date;
   enteredTitle = '';
   enteredContent = '';
   enteredDuration = '';
@@ -32,6 +33,7 @@ export class LogCreateComponent implements OnInit {
           this.isLoading = false;
           this.log = {
             id: logData._id,
+            date: logData.date,
             title: logData.title,
             content: logData.content,
             duration: logData.duration
@@ -51,10 +53,11 @@ export class LogCreateComponent implements OnInit {
     }
     this.isLoading = true;
     if (this.mode === 'create') {
-      this.logsService.addLog(form.value.title, form.value.content, form.value.duration);
+      this.logsService.addLog(form.value.date, form.value.title, form.value.content, form.value.duration);
     } else {
       this.logsService.updateLog(
         this.logId,
+        form.value.date,
         form.value.title,
         form.value.content,
         form.value.duration
