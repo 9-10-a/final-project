@@ -11,6 +11,10 @@
       <textarea matInput rows="4" name="content" [ngModel]="log?.content" required placeholder="Log Content" #content="ngModel"></textarea>
       <mat-error *ngIf="content.invalid">Tell us where all that sweat came from.</mat-error>
     </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" name="duration" [ngModel]="log?.duration" placeholder="Log Duration"
+        #duration="ngModel">
+    </mat-form-field>
     <button mat-raised-button color="accent" type="submit">Save Workout</button>
   </form>
 </mat-card>

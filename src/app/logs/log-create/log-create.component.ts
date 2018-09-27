@@ -13,6 +13,7 @@ import { Log } from '../log.model';
 export class LogCreateComponent implements OnInit {
   enteredTitle = '';
   enteredContent = '';
+  enteredDuration = '';
   log: Log;
   isLoading = false;
   private mode = 'create';
@@ -32,7 +33,8 @@ export class LogCreateComponent implements OnInit {
           this.log = {
             id: logData._id,
             title: logData.title,
-            content: logData.content
+            content: logData.content,
+            duration: logData.duration
           };
         });
       } else {
@@ -49,12 +51,13 @@ export class LogCreateComponent implements OnInit {
     }
     this.isLoading = true;
     if (this.mode === 'create') {
-      this.logsService.addLog(form.value.title, form.value.content);
+      this.logsService.addLog(form.value.title, form.value.content, form.value.duration);
     } else {
       this.logsService.updateLog(
         this.logId,
         form.value.title,
-        form.value.content
+        form.value.content,
+        form.value.duration
       );
     }
     form.resetForm();

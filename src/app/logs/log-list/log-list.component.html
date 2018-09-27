@@ -4,7 +4,10 @@
     <mat-expansion-panel-header>
       {{ log.title }}
     </mat-expansion-panel-header>
+    <h3>SWEAT LOGGED: </h3>
     <p>{{ log.content }}</p>
+    <h3>DURATION/SCORE: </h3>
+    <p>{{ log.duration }}</p>
     <mat-action-row>
       <a mat-button color="primary" [routerLink]="['/edit', log.id]">EDIT</a>
       <button mat-button color="warn" (click)="onDelete(log.id)">DELETE</button>

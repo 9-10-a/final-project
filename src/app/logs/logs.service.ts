@@ -24,7 +24,8 @@ export class LogsService {
             return {
               title: log.title,
               content: log.content,
-              id: log._id
+              id: log._id,
+              duration: log.duration
             };
           });
         })
@@ -42,13 +43,13 @@ export class LogsService {
 
   // gets the log information for editing a post - loaded into the log create
   getLog(id: string) {
-    return this.http.get<{ _id: string; title: string; content: string }>(
+    return this.http.get<{ _id: string; title: string; content: string; duration: string }>(
       'http://localhost:3000/api/logs/' + id
     );
   }
   // Creating a new log
-  addLog(title: string, content: string) {
-    const log: Log = { id: null, title: title, content: content };
+  addLog(title: string, content: string, duration: string) {
+    const log: Log = { id: null, title: title, content: content, duration: duration };
     this.http
       .post<{ message: string; logId: string }>(
         'http://localhost:3000/api/logs',
@@ -65,8 +66,8 @@ export class LogsService {
   }
 
   // Edit a log
-  updateLog(id: string, title: string, content: string) {
-    const log: Log = { id: id, title: title, content: content };
+  updateLog(id: string, title: string, content: string, duration: string) {
+    const log: Log = { id: id, title: title, content: content, duration: duration };
     this.http
       .put('http://localhost:3000/api/logs/' + id, log)
       .subscribe(response => {
