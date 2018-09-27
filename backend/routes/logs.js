@@ -5,7 +5,8 @@ const router = express.Router();
 router.post('', (req, res, next) => {
   const log = new Log({
     title: req.body.title,
-    content: req.body.content
+    content: req.body.content,
+    duration: req.body.duration
   });
   // saves to db
   log.save().then(createdLog => {
@@ -21,7 +22,8 @@ router.put('/:id', (req, res, next) => {
   const log = new Log({
     _id: req.body.id,
     title: req.body.title,
-    content: req.body.content
+    content: req.body.content,
+    duration: req.body.duration
   });
   Log.updateOne({ _id: req.params.id }, log).then(result => {
     res.status(200).json({ message: 'Update successful!' });
