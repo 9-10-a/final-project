@@ -1,4 +1,5 @@
 <script src="angular.min.js"></script>
+<script src="timer.component.css"></script>
 <script>
 angular.module('CounterApp', [])
     .controller('CounterController', function($scope, $timeout) {
@@ -10,10 +11,14 @@ angular.module('CounterApp', [])
         updateCounter();
     });
 </script>
-<div ng-app="CounterApp">
+<div ng-app="TimerApp">
    <div ng-controller="CounterController">
    {{counter}}
    </div>
+   <div class="container">
+        <div class="box rotate"></div>
+       
+     </div>
 </div>
 
 

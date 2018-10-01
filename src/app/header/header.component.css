@@ -1,50 +1,17 @@
-* {
-    box-sizing: border-box;
-  }
-  
-  /* Style the search field */
-  form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-  }
-  
-  /* Style the submit button */
-  form.example button {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    background: #2196F3;
-    color: white;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-left: none; /* Prevent double borders */
-    cursor: pointer;
-  }
-  
-  form.example button:hover {
-    background: #0b7dda;
-  }
-  
-  /* Clear floats */
-  form.example::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
-    
-/* Change the color of links on hover */
-.navbar a:hover {
-  background-color: #ddd;
-  color: black;
+.box {
+  margin: 50px auto;
+  background: #5FCF80;
+  width: 150px;
+  height: 150px;
 }
-
-/* Add a color to the active/current link */
-.navbar a.active {
-  background-color: #4CAF50;
-  color: white;
+.box:hover {
+  transform: rotate(360deg);
+  background: #9351A6;
+  border-radius: 50%;
 }
-  
+.rotate {
+  transition: all 0.5s ease-in-out;
+}
+.rotate:hover {
+  transition: all 1s ease-in-out;
+}

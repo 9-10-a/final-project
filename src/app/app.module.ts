@@ -33,6 +33,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     SignupComponent,
     LoginComponent,
     HomepageComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -48,9 +49,11 @@ import { HomepageComponent } from './homepage/homepage.component';
     HttpClientModule,
     MatDatepickerModule,
     MatNativeDateModule
+    
 
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
 export class AppModule {}
