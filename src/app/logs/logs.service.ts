@@ -3,8 +3,10 @@ import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { environment } from '../../environments/environment';
 
 import { Log } from './log.model';
+const BACKEND_URL = environment.apiUrl + '/logs/';
 
 @Injectable({ providedIn: 'root' })
 export class LogsService {
@@ -16,7 +18,7 @@ export class LogsService {
   // Sending http request to get logs
   getLogs() {
     this.http
-      .get<{ message: string; logs: any }>('http://localhost:3000/api/logs')
+      .get<{ message: string; logs: any }>(BACKEND_URL)
       // transforming to access _id from db
       .pipe(
         map(logData => {
@@ -44,18 +46,25 @@ export class LogsService {
 
   // gets the log information for editing a post - loaded into the log create
   getLog(id: string) {
-    return this.http.get<{ _id: string; date: Date, title: string; content: string; duration: string }>(
-      'http://localhost:3000/api/logs/' + id
-    );
+    return this.http.get<{
+      _id: string;
+      date: Date;
+      title: string;
+      content: string;
+      duration: string;
+    }>(BACKEND_URL + id);
   }
   // Creating a new log
   addLog(date: Date, title: string, content: string, duration: string) {
-    const log: Log = { id: null, date: date, title: title, content: content, duration: duration };
+    const log: Log = {
+      id: null,
+      date: date,
+      title: title,
+      content: content,
+      duration: duration
+    };
     this.http
-      .post<{ message: string; logId: string }>(
-        'http://localhost:3000/api/logs',
-        log
-      )
+      .post<{ message: string; logId: string }>(BACKEND_URL, log)
       .subscribe(responseData => {
         const id = responseData.logId;
         log.id = id;
@@ -67,30 +76,38 @@ export class LogsService {
   }
 
   // Edit a log
-  updateLog(id: string, date: Date, title: string, content: string, duration: string) {
-    const log: Log = { id: id, date: date, title: title, content: content, duration: duration };
-    this.http
-      .put('http://localhost:3000/api/logs/' + id, log)
-      .subscribe(response => {
-        const updatedLogs = [...this.logs];
-        const oldLogIndex = updatedLogs.findIndex(l => l.id === log.id);
-        updatedLogs[oldLogIndex] = log;
-        this.logs = updatedLogs;
-        this.logsUpdated.next([...this.logs]);
-        // routing after a log is saved - Service needs router module for this
-        this.router.navigate(['/log']);
-      });
+  updateLog(
+    id: string,
+    date: Date,
+    title: string,
+    content: string,
+    duration: string
+  ) {
+    const log: Log = {
+      id: id,
+      date: date,
+      title: title,
+      content: content,
+      duration: duration
+    };
+    this.http.put(BACKEND_URL + id, log).subscribe(response => {
+      const updatedLogs = [...this.logs];
+      const oldLogIndex = updatedLogs.findIndex(l => l.id === log.id);
+      updatedLogs[oldLogIndex] = log;
+      this.logs = updatedLogs;
+      this.logsUpdated.next([...this.logs]);
+      // routing after a log is saved - Service needs router module for this
+      this.router.navigate(['/log']);
+    });
   }
 
   // delete log
   deleteLog(logId: string) {
-    this.http
-      .delete('http://localhost:3000/api/logs/' + logId)
-      .subscribe(() => {
-        // used to keep log list updated when post is deleted
-        const updatedLogs = this.logs.filter(log => log.id !== logId);
-        this.logs = updatedLogs;
-        this.logsUpdated.next([...this.logs]);
-      });
+    this.http.delete(BACKEND_URL + logId).subscribe(() => {
+      // used to keep log list updated when post is deleted
+      const updatedLogs = this.logs.filter(log => log.id !== logId);
+      this.logs = updatedLogs;
+      this.logsUpdated.next([...this.logs]);
+    });
   }
 }

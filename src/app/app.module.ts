@@ -22,7 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './users/signup/signup.component';
 import { LoginComponent } from './users/login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
-
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -32,8 +32,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     LogListComponent,
     SignupComponent,
     LoginComponent,
-    HomepageComponent
-    
+    HomepageComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
@@ -49,11 +49,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     HttpClientModule,
     MatDatepickerModule,
     MatNativeDateModule
-    
-
   ],
   providers: [],
   bootstrap: [AppComponent]
-  
 })
 export class AppModule {}
