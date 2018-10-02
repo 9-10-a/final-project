@@ -24,6 +24,7 @@ import { LoginComponent } from './users/login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 
+import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +35,8 @@ import { ProfileComponent } from './profile/profile.component';
     SignupComponent,
     LoginComponent,
     HomepageComponent,
-    ProfileComponent
-    
+    ProfileComponent,
+    TimerComponent
   ],
   imports: [
     BrowserModule,
@@ -51,11 +52,8 @@ import { ProfileComponent } from './profile/profile.component';
     HttpClientModule,
     MatDatepickerModule,
     MatNativeDateModule
-    
-
   ],
   providers: [],
   bootstrap: [AppComponent]
-  
 })
 export class AppModule {}
