@@ -22,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './users/signup/signup.component';
 import { LoginComponent } from './users/login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './profile/profile.component';
 import { TimerComponent } from './timer/timer.component';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { TimerComponent } from './timer/timer.component';
     SignupComponent,
     LoginComponent,
     HomepageComponent,
+    ProfileComponent,
     TimerComponent
   ],
   imports: [
