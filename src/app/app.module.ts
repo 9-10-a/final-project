@@ -22,6 +22,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './users/signup/signup.component';
 import { LoginComponent } from './users/login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     LogListComponent,
     SignupComponent,
     LoginComponent,
-    HomepageComponent
+    HomepageComponent,
+    ProfileComponent
     
   ],
   imports: [

@@ -6,6 +6,7 @@ import { LogCreateComponent } from './logs/log-create/log-create.component';
 import { LoginComponent } from './users/login/login.component';
 import { SignupComponent } from './users/signup/signup.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   // log workout paths
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'home', component: HomepageComponent }
+  { path: 'home', component: HomepageComponent },
+  {path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({
