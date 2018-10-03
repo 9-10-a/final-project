@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { LogsService } from '../logs.service';
-import { Log } from '../log.model';
+import { Log } from '../logs.model';
 
 @Component({
   selector: 'app-log-create',

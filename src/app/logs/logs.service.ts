@@ -5,10 +5,101 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 
-import { Log } from './log.model';
+import { Log } from './logs.model';
 const BACKEND_URL = environment.apiUrl + '/logs/';
 
 @Injectable({ providedIn: 'root' })
+export class LogsService {
+  private logs: Log[] = [];
+  private logsUpdated = new Subject<{ logs: Log[]; logCount: number }>();
+
+  constructor(private http: HttpClient, private router: Router) {}
+
+  getLogs(logsPerPage: number, currentPage: number) {
+    const queryParams = `?pagesize=${logsPerPage}&page=${currentPage}`;
+    this.http
+      .get<{ message: string; logs: any; maxLogs: number }>(
+        BACKEND_URL + queryParams
+      )
+      .pipe(
+        map(logData => {
+          return {
+            logs: logData.logs.map(log => {
+              return {
+                title: log.title,
+                content: log.content,
+                id: log._id,
+                imagePath: log.imagePath,
+                creator: log.creator
+              };
+            }),
+            maxLogs: logData.maxLogs
+          };
+        })
+      )
+      .subscribe(transformedLogData => {
+        this.logs = transformedLogData.logs;
+        this.logsUpdated.next({
+          logs: [...this.logs],
+          logCount: transformedLogData.maxLogs
+        });
+      });
+  }
+
+  getLogUpdateListener() {
+    return this.logsUpdated.asObservable();
+  }
+
+  getLog(id: string) {
+    return this.http.get<{
+      _id: string;
+      title: string;
+      content: string;
+      imagePath: string;
+      creator: string;
+    }>(BACKEND_URL + id);
+  }
+
+  addLog(title: string, content: string, image: File) {
+    const logData = new FormData();
+    logData.append('title', title);
+    logData.append('content', content);
+    logData.append('image', image, title);
+    this.http
+      .post<{ message: string; log: Log }>(BACKEND_URL, logData)
+      .subscribe(responseData => {
+        this.router.navigate(['/']);
+      });
+  }
+
+  updateLog(id: string, title: string, content: string, image: File | string) {
+    let logData: Log | FormData;
+    if (typeof image === 'object') {
+      logData = new FormData();
+      logData.append('id', id);
+      logData.append('title', title);
+      logData.append('content', content);
+      logData.append('image', image, title);
+    } else {
+      logData = {
+        id: id,
+        title: title,
+        content: content,
+        creator: null
+      };
+    }
+    this.http.put(BACKEND_URL + id, logData).subscribe(response => {
+      this.router.navigate(['/']);
+    });
+  }
+
+  deleteLog(logId: string) {
+    return this.http.delete(BACKEND_URL + logId);
+  }
+}
+
+
+/*@Injectable({ providedIn: 'root' })
 export class LogsService {
   private logs: Log[] = [];
   private logsUpdated = new Subject<Log[]>();
@@ -110,4 +201,4 @@ export class LogsService {
       this.logsUpdated.next([...this.logs]);
     });
   }
-}
+}*/

@@ -1,6 +1,13 @@
 <mat-toolbar>
-  <span>SweatLog App</span>
+  <span>SweatLog App!</span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <button mat-button (click)="onLogout()">Logout</button>
+    </li>
+  </ul>
  </mat-toolbar>
+
 
  <script src="js/lib/angular.js"></script>
  <script src="js/lib/angular-animate.js"></script>
@@ -20,7 +27,7 @@
     <br />
     <br />
     <span ng-bind="Message"></span>
-    
+
 </div>
 
 
