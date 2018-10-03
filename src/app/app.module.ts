@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { SignupComponent } from './users/signup/signup.component';
 import { LoginComponent } from './users/login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './profile/profile.component';
 import { TimerComponent } from './timer/timer.component';
 import { AuthInterceptor } from './users/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
@@ -28,7 +29,8 @@ import { LogsModule } from './logs/logs.module';
     LoginComponent,
     HomepageComponent,
     TimerComponent,
-    ErrorComponent
+    ErrorComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
