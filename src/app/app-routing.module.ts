@@ -6,21 +6,22 @@ import { LogCreateComponent } from './logs/log-create/log-create.component';
 import { LoginComponent } from './users/login/login.component';
 import { SignupComponent } from './users/signup/signup.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AuthGuard } from './users/auth.guard';
 
 const routes: Routes = [
-  // log workout paths
+  { path: '', redirectTo: '/home', pathMatch: 'full' }, { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
   { path: 'log', component: LogListComponent },
   { path: 'create', component: LogCreateComponent },
   { path: 'edit/:logId', component: LogCreateComponent },
-  // user paths
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent },
-  { path: 'signup', component: SignupComponent },
   { path: 'home', component: HomepageComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [
+    RouterModule.forChild(routes)
+  ],
+  exports: [RouterModule],
+  providers: [AuthGuard]
 })
 export class AppRoutingModule {}

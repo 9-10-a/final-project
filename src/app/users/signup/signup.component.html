@@ -5,27 +5,16 @@
         Sign Up for SweatLog
       </h4>
     </div>
-    <form class="regForm" action="">
+    <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
       <mat-form-field>
-        <input matInput type="text" name="fName" placeholder="First Name" [(ngModel)]="user.firstName">
+        <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+        <mat-error *ngIf="emailInput.invalid">Please enter a valid email.</mat-error>
       </mat-form-field>
-      <br>
       <mat-form-field>
-        <input matInput type="text" name="lName" placeholder="Last Name" [(ngModel)]="user.lastName">
+        <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+        <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
       </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input matInput type="text" name="email" placeholder="Email Address" [(ngModel)]="user.email">
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input matInput type="text" name="userName" placeholder="User Name" [(ngModel)]="user.userName">
-      </mat-form-field>
-      <br>
-      <mat-form-field>
-        <input matInput type="password" name="password" placeholder="Password" [(ngModel)]="user.password">
-      </mat-form-field>
-      <br>
+      <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Signup</button>
     </form>
     <div>
       <button mat-raised-button color="accent" (click)="register()">Submit</button>
@@ -33,6 +22,5 @@
     <div>
       <h4>Already a member?<a routerLink="/login"> Login Here</a></h4>
     </div>
-
   </mat-card>
 </div>

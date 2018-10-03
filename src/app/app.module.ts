@@ -1,18 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import {
-  MatInputModule,
-  MatCardModule,
-  MatButtonModule,
-  MatToolbarModule,
-  MatExpansionModule,
-  MatProgressSpinnerModule,
-  MatDatepickerModule,
-  MatNativeDateModule
-} from '@angular/material';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { LogCreateComponent } from './logs/log-create/log-create.component';
@@ -23,6 +12,11 @@ import { SignupComponent } from './users/signup/signup.component';
 import { LoginComponent } from './users/login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { TimerComponent } from './timer/timer.component';
+import { AuthInterceptor } from './users/auth-interceptor';
+import { ErrorInterceptor } from './error-interceptor';
+import { ErrorComponent } from './error/error.component';
+import { AngularMaterialModule } from './angular-material.module';
+import { LogsModule } from './logs/logs.module';
 
 @NgModule({
   declarations: [
@@ -33,24 +27,22 @@ import { TimerComponent } from './timer/timer.component';
     SignupComponent,
     LoginComponent,
     HomepageComponent,
-    TimerComponent
+    TimerComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
     BrowserAnimationsModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatExpansionModule,
-    MatProgressSpinnerModule,
+    AngularMaterialModule,
     HttpClientModule,
-    MatDatepickerModule,
-    MatNativeDateModule
+    LogsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
+  bootstrap: [AppComponent],
+  entryComponents: [ErrorComponent]
 })
 export class AppModule {}
