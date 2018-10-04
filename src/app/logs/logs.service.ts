@@ -15,6 +15,7 @@ export class LogsService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
+  // Paginator
   getLogs(logsPerPage: number, currentPage: number) {
     const queryParams = `?pagesize=${logsPerPage}&page=${currentPage}`;
     this.http
@@ -29,7 +30,8 @@ export class LogsService {
                 title: log.title,
                 content: log.content,
                 id: log._id,
-                imagePath: log.imagePath,
+                duration: log.duration,
+                date: log.date,
                 creator: log.creator
               };
             }),
@@ -50,46 +52,49 @@ export class LogsService {
     return this.logsUpdated.asObservable();
   }
 
+  // get log by id
   getLog(id: string) {
     return this.http.get<{
       _id: string;
       title: string;
       content: string;
-      imagePath: string;
+      date: string;
+      duration: string;
       creator: string;
     }>(BACKEND_URL + id);
   }
 
-  addLog(title: string, content: string, image: File) {
+  // add new log
+  addLog(date: string, title: string, content: string, duration: string) {
     const logData = new FormData();
     logData.append('title', title);
     logData.append('content', content);
-    logData.append('image', image, title);
+    logData.append('duration', duration);
+    logData.append('date', date);
     this.http
       .post<{ message: string; log: Log }>(BACKEND_URL, logData)
       .subscribe(responseData => {
-        this.router.navigate(['/']);
+        this.router.navigate(['/log']);
       });
   }
 
-  updateLog(id: string, title: string, content: string, image: File | string) {
+  // update specific log by id
+  updateLog(
+    date: string,
+    id: string,
+    title: string,
+    content: string,
+    duration: string
+  ) {
     let logData: Log | FormData;
-    if (typeof image === 'object') {
-      logData = new FormData();
-      logData.append('id', id);
-      logData.append('title', title);
-      logData.append('content', content);
-      logData.append('image', image, title);
-    } else {
-      logData = {
-        id: id,
-        title: title,
-        content: content,
-        creator: null
-      };
-    }
+    logData = new FormData();
+    logData.append('id', id);
+    logData.append('date', date);
+    logData.append('title', title);
+    logData.append('content', content);
+    logData.append('duration', duration);
     this.http.put(BACKEND_URL + id, logData).subscribe(response => {
-      this.router.navigate(['/']);
+      this.router.navigate(['/log']);
     });
   }
 
@@ -97,7 +102,6 @@ export class LogsService {
     return this.http.delete(BACKEND_URL + logId);
   }
 }
-
 
 /*@Injectable({ providedIn: 'root' })
 export class LogsService {

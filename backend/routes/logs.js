@@ -1,65 +1,19 @@
 const express = require('express');
-const Log = require('../models/log');
+
+const LogsController = require('../controllers/logs');
+
+const checkAuth = require('../middleware/check-auth');
+
 const router = express.Router();
 
-router.post('', (req, res, next) => {
-  const log = new Log({
-    date: req.body.date,
-    title: req.body.title,
-    content: req.body.content,
-    duration: req.body.duration
-  });
-  // saves to db
-  log.save().then(createdLog => {
-    res.status(201).json({
-      message: 'Log added successfully',
-      logId: createdLog._id
-    });
-  });
-});
+router.post('', checkAuth, LogsController.createLog);
 
-// Updating a log in edit mode
-router.put('/:id', (req, res, next) => {
-  const log = new Log({
-    _id: req.body.id,
-    date: req.body.date,
-    title: req.body.title,
-    content: req.body.content,
-    duration: req.body.duration
-  });
-  Log.updateOne({ _id: req.params.id }, log).then(result => {
-    res.status(200).json({ message: 'Update successful!' });
-  });
-});
+router.put('/:id', checkAuth, LogsController.updateLog);
 
-// fetching data from the db - find will return all entries - Listed on log-list
-router.get('', (req, res, next) => {
-  Log.find().then(logs => {
-    res.status(200).json({
-      message: 'Logs fetched successfully!',
-      logs: logs
-    });
-  });
-});
+router.get('', LogsController.getLogs);
 
-// fetching specific data from the db - will only findById - update in log-list
-router.get('/:id', (req, res, next) => {
-  Log.findById(req.params.id).then(log => {
-    if (log) {
-      res.status(200).json(log);
-    } else {
-      res.status(404).json({ message: 'Log not found!' });
-    }
-  });
-});
+router.get('/:id', LogsController.getLog);
 
-// delete log by specific id - Delete in log-list
-router.delete('/:id', (req, res, next) => {
-  Log.deleteOne({ _id: req.params.id }).then(result => {
-    console.log(result);
-    res.status(200).json({ message: 'Log deleted!' });
-  });
-});
+router.delete('/:id', checkAuth, LogsController.deleteLog);
 
-// export needed so the rest of the app is aware
 module.exports = router;

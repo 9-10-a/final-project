@@ -29,22 +29,22 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', '*'); // no matter which domain its able to access resources
   res.setHeader(
     'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept' // incoming request may have these headers
+    'Origin, X-Requested-With, Content-Type, Accept, Authorization' // incoming request may have these headers
   );
   res.setHeader(
     'Access-Control-Allow-Methods',
-    'GET, POST, PATCH, PUT, DELETE, OPTIONS' // Methods allowed
+    'GET, POST, PATCH, PUT, DELETE, OPTIONS, HEAD' // Methods allowed
   );
   next();
 });
 
 // importing routes
 const logsRoutes = require('./routes/logs');
-const usersRoutes = require('./routes/users');
+const userRoutes = require('./routes/user');
 
 // Path
 app.use('/api/logs', logsRoutes);
-app.use('/api/users', usersRoutes);
+app.use('/api/user', userRoutes);
 
 var distDir = __dirname + '/dist/group-project/';
 app.use(express.static(distDir));

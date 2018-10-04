@@ -1,72 +1,11 @@
-let mongoose = require('mongoose');
-let crypto = require('crypto');
-let jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
-let UserSchema = new mongoose.Schema({
-  email: String,
-  passwordHash: String,
-  salt: String,
-  firstName: String,
-  lastName: String,
-  userName: String
+const userSchema = mongoose.Schema({
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true }
 });
 
-// let UserSchema = new mongoose.Schema({
-//   firstName: {
-//     type: String,
-//     required: true
-//   },
-//   lastName: {
-//     type: String,
-//   },
-//   email: {
-//     type: String,
-//     required: true,
-//     unique: true
-//   },
-//   userName: {
-//     type: String,
-//     unique: true
-//   },
-//   passwordHash: {
-//     type: String,
-//     required: true,
-//     salt: String
-//   },
-//   date: {
-//     type: Date,
-//     default: Date.now
-//   },
-//   _id: {
-//     type: Number,
-//     autoIncrement: true
-//   }
-// });
+userSchema.plugin(uniqueValidator);
 
-UserSchema.method('setPassword', function(password) {
-  this.salt = crypto.randomBytes(16).toString('hex');
-  this.passwordHash = crypto
-    .pbkdf2Sync(password, this.salt, 1000, 64, 'sha1')
-    .toString('hex');
-});
-
-UserSchema.method('validatePassword', function(password) {
-  let hash = crypto
-    .pbkdf2Sync(password, this.salt, 1000, 64, 'sha1')
-    .toString('hex');
-  return hash === this.passwordHash;
-});
-
-UserSchema.method('generateJWT', function() {
-  return jwt.sign(
-    {
-      id: this._id,
-      email: this.email
-    },
-    'SecretKey'
-  );
-});
-let User = mongoose.model('User', UserSchema);
-module.exports = User;
-
-// collection on mlab will be users
+module.exports = mongoose.model('User', userSchema);

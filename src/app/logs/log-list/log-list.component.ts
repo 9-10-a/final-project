@@ -15,16 +15,17 @@ export class LogListComponent implements OnInit, OnDestroy {
   logs: Log[] = [];
   isLoading = false;
   totalLogs = 0;
-  logsPerPage = 2;
+  logsPerPage = 5;
   currentPage = 1;
-  pageSizeOptions = [1, 2, 5, 10];
+  pageSizeOptions = [5, 15, 25];
   userIsAuthenticated = false;
   userId: string;
   private logsSub: Subscription;
   private authStatusSub: Subscription;
 
-  constructor(public logsService: LogsService,
-  private authService: AuthService
+  constructor(
+    public logsService: LogsService,
+    private authService: AuthService
   ) {}
 
   ngOnInit() {
@@ -56,11 +57,14 @@ export class LogListComponent implements OnInit, OnDestroy {
 
   onDelete(logId: string) {
     this.isLoading = true;
-    this.logsService.deleteLog(logId).subscribe(() => {
-      this.logsService.getLogs(this.logsPerPage, this.currentPage);
-    }, () => {
-      this.isLoading = false;
-    });
+    this.logsService.deleteLog(logId).subscribe(
+      () => {
+        this.logsService.getLogs(this.logsPerPage, this.currentPage);
+      },
+      () => {
+        this.isLoading = false;
+      }
+    );
   }
 
   ngOnDestroy() {
