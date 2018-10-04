@@ -16,5 +16,5 @@
   </mat-expansion-panel>
 </mat-accordion>
 <mat-paginator [length]="totalLogs" [pageSize]="logsPerPage" [pageSizeOptions]="pageSizeOptions" (page)="onChangedPage($event)"
-  *ngIf="logs.length > 0"></mat-paginator>
+  *ngIf="logs.length > 4"></mat-paginator>
 <p class="info-text mat-body-1" *ngIf="logs.length <= 0 && !isLoading">No logs added yet!</p>

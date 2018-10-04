@@ -4,33 +4,20 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { LogCreateComponent } from './logs/log-create/log-create.component';
 import { HeaderComponent } from './header/header.component';
-import { LogListComponent } from './logs/log-list/log-list.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SignupComponent } from './users/signup/signup.component';
-import { LoginComponent } from './users/login/login.component';
-import { HomepageComponent } from './homepage/homepage.component';
-import { ProfileComponent } from './profile/profile.component';
-import { TimerComponent } from './timer/timer.component';
-import { AuthInterceptor } from './users/auth-interceptor';
+import { AuthInterceptor } from '../app/users/auth-interceptor';
 import { ErrorInterceptor } from './error-interceptor';
 import { ErrorComponent } from './error/error.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { LogsModule } from './logs/logs.module';
-
+import { HomepageComponent } from './homepage/homepage.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LogCreateComponent,
     HeaderComponent,
-    LogListComponent,
-    SignupComponent,
-    LoginComponent,
-    HomepageComponent,
-    TimerComponent,
     ErrorComponent,
-    ProfileComponent
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +25,7 @@ import { LogsModule } from './logs/logs.module';
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
-    LogsModule,
+    LogsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
