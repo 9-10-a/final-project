@@ -1,26 +1,4 @@
-<mat-toolbar color="primary">
-  <span>
-    <a routerLink="/">SweatLog</a>
-  </span>
-  <span class="spacer"></span>
-  <ul>
-    <li *ngIf="userIsAuthenticated">
-      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
-    </li>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
-    </li>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
-    </li>
-    <li *ngIf="userIsAuthenticated">
-      <button mat-button (click)="onLogout()">Logout</button>
-    </li>
-  </ul>
-</mat-toolbar>
-
-
-<!-- <mat-toolbar>
+<mat-toolbar>
   <span>SweatLog App!</span>
   <span class="spacer"></span>
   <ul>
@@ -29,25 +7,24 @@
     </li>
   </ul>
 </mat-toolbar>
- -->
 
-<!-- <script src="js/lib/angular.js"></script>
- <script src="js/lib/angular-animate.js"></script>
- <script src="header.component.css"></script>
+<script src="js/lib/angular.js"></script>
+<script src="js/lib/angular-animate.js"></script>
+<script src="header.component.css"></script>
 
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
 <script type="text/javascript">
-    var app = angular.module('MyApp', [])
-    app.controller('MyController', function ($scope) {
-       $scope.ButtonClick = function () {
-            $scope.Message = "Button clicked."
-        }
-    });
+  var app = angular.module('MyApp', [])
+  app.controller('MyController', function ($scope) {
+    $scope.ButtonClick = function () {
+      $scope.Message = "Button clicked."
+    }
+  });
 </script>
 <div ng-app="Header" ng-controller="MyController">
-    <input type="button" value="HOME" ng-click="ButtonClick()" />
-    <br />
-    <br />
-    <span ng-bind="Message"></span>
+  <input type="button" value="HOME" ng-click="ButtonClick()" />
+  <br />
+  <br />
+  <span ng-bind="Message"></span>
 
-</div> -->
+</div>
