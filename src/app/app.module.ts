@@ -12,12 +12,16 @@ import { ErrorComponent } from './error/error.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { LogsModule } from './logs/logs.module';
 import { HomepageComponent } from './homepage/homepage.component';
+import { ProfileComponent } from './profile/profile.component';
+import { TimerComponent } from './timer/timer.component';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ErrorComponent,
-    HomepageComponent
+    HomepageComponent,
+    TimerComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

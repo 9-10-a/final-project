@@ -27,11 +27,12 @@ export class LogsService {
           return {
             logs: logData.logs.map(log => {
               return {
-                title: log.title,
-                content: log.content,
                 id: log._id,
-                duration: log.duration,
                 date: log.date,
+                content: log.content,
+                minutes: log.minutes,
+                seconds: log.seconds,
+                score: log.score,
                 creator: log.creator
               };
             }),
@@ -41,6 +42,7 @@ export class LogsService {
       )
       .subscribe(transformedLogData => {
         this.logs = transformedLogData.logs;
+        // informs the rest of the app about the update
         this.logsUpdated.next({
           logs: [...this.logs],
           logCount: transformedLogData.maxLogs
@@ -56,44 +58,62 @@ export class LogsService {
   getLog(id: string) {
     return this.http.get<{
       _id: string;
-      title: string;
-      content: string;
       date: string;
-      duration: string;
+      content: string;
+      minutes: string;
+      seconds: string;
+      score: string;
       creator: string;
     }>(BACKEND_URL + id);
   }
 
   // add new log
-  addLog(date: string, title: string, content: string, duration: string) {
-    const logData = new FormData();
-    logData.append('title', title);
-    logData.append('content', content);
-    logData.append('duration', duration);
-    logData.append('date', date);
+  addLog(
+    date: string,
+    content: string,
+    minutes: string,
+    seconds: string,
+    score: string,
+    creator: string
+  ) {
+    const log: Log = {
+      id: null,
+      date: date,
+      content: content,
+      minutes: minutes,
+      seconds: seconds,
+      score: score,
+      creator: creator
+    };
     this.http
-      .post<{ message: string; log: Log }>(BACKEND_URL, logData)
+      .post<{ message: string; logId: string }>(BACKEND_URL, log)
       .subscribe(responseData => {
+        // routing after a log is saved - Service needs router module for this
         this.router.navigate(['/log']);
       });
   }
 
   // update specific log by id
   updateLog(
-    date: string,
     id: string,
-    title: string,
+    date: string,
     content: string,
-    duration: string
+    minutes: string,
+    seconds: string,
+    score: string,
+    creator: string
   ) {
-    let logData: Log | FormData;
-    logData = new FormData();
-    logData.append('id', id);
-    logData.append('date', date);
-    logData.append('title', title);
-    logData.append('content', content);
-    logData.append('duration', duration);
-    this.http.put(BACKEND_URL + id, logData).subscribe(response => {
+    const log: Log = {
+      id: id,
+      date: date,
+      content: content,
+      minutes: minutes,
+      seconds: seconds,
+      score: score,
+      creator: creator
+    };
+    this.http.put(BACKEND_URL + id, log).subscribe(response => {
+      // routing after a log is saved - Service needs router module for this
       this.router.navigate(['/log']);
     });
   }
