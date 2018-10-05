@@ -37,15 +37,16 @@ exports.updateLog = (req, res, next) => {
 exports.getLogs = (req, res, next) => {
   const pageSize = +req.query.pagesize;
   const currentPage = +req.query.page;
-  const logQuery = Log.find().sort(sort);
   let fetchedLogs;
+  const creator = req.userData.userId;
+  const logQuery = Log.find({ creator: creator }).sort(sort);
   if (pageSize && currentPage) {
     logQuery.skip(pageSize * (currentPage - 1)).limit(pageSize);
   }
   logQuery
     .then(logs => {
       fetchedLogs = logs;
-      return Log.countDocuments();
+      return Log.find({ creator: creator }).countDocuments();
     })
     .then(count => {
       res.status(200).json({
