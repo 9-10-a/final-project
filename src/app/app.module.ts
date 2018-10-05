@@ -23,7 +23,7 @@ import { SignupComponent } from './users/signup/signup.component';
 import { LoginComponent } from './users/login/login.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
-import { TimerComponent } from './timer/timer.component';
+import { HelloComponent } from './timer/hello.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +34,8 @@ import { TimerComponent } from './timer/timer.component';
     SignupComponent,
     LoginComponent,
     HomepageComponent,
-    ProfileComponent,
-    TimerComponent
+    ProfileComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -50,9 +50,12 @@ import { TimerComponent } from './timer/timer.component';
     MatProgressSpinnerModule,
     HttpClientModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    HelloComponent
+    
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ]
 })
 export class AppModule {}

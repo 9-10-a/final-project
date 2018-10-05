@@ -1,15 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-timer',
+  selector: 'my-app',
   templateUrl: './timer.component.html',
-  styleUrls: ['./timer.component.css']
+  styleUrls: [ './timer.component.css' ]
 })
-export class TimerComponent implements OnInit {
+export class AppComponent  {
+  name = 'SweatLog';
+  timeLeft: number = 120;
+  interval;
 
-  constructor() { }
-
-  ngOnInit() {
+  startTimer() {
+    this.interval = setInterval(() => {
+      if(this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.timeLeft = 60;
+      }
+    },1000)
   }
 
+  pauseTimer() {
+    clearInterval(this.interval);
+  }
 }
+
+

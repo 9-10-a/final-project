@@ -1,46 +1,17 @@
-<script src="angular.min.js"></script>
-<script src="timer.component.css"></script>
-<script>
-angular.module('CounterApp', [])
-    .controller('CounterController', function($scope, $timeout) {
-        $scope.counter = 0;
-        var updateCounter = function() {
-            $scope.counter++;
-            $timeout(updateCounter, 1000);
-        };
-        updateCounter();
-    });
-</script>
-<div ng-app="TimerApp">
-   <div ng-controller="CounterController">
-   {{counter}}
-   </div>
-   <div class="container">
-        <div class="box rotate"></div>
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
 
-     </div>
-</div>
+<button (click)='startTimer()'>Start Timer</button>
+<button (click)='pauseTimer()'>Pause</button>
 
+<p>{{timeLeft}} Seconds Left....</p> 
 
-<script src="angular.min.js"></script>
-<script>
-angular.module('CounterApp', [])
-    .controller('CounterController', function($scope, $timeout) {
-        var timer;
-        $scope.counter = 0;
-        $scope.stopCounter = function() {
-            $timeout.cancel(timer);
-        };
-        var updateCounter = function() {
-            $scope.counter++;
-            timer = $timeout(updateCounter, 1000);
-        };
-        updateCounter();
-    });
-</script>
-<div ng-app="CounterApp">
-   <div ng-controller="CounterController">
-   {{counter}}
-   <button ng-click="stopCounter()">Stop</button>
-   </div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
+
+<div ng-app="myApp">
+  <div ng-controller='TimeCtrl'>
+    <p>{{ clock | date:'HH:mm:ss'}}</p>
+  </div>
 </div>
