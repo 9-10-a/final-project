@@ -1,32 +1,23 @@
 <mat-card>
   <mat-spinner *ngIf="isLoading"></mat-spinner>
-  <form [formGroup]="form" (submit)="onSaveLog()" *ngIf="!isLoading">
-
-    <mat-form-field>
-      <mat-label>Select your SWEAT date</mat-label>
-      <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choose a date">
+  <form (submit)="onSaveLog(logForm)" #logForm="ngForm" *ngIf="!isLoading">
+    <!-- datepicker  -->
+    <mat-form-field class="date">
+      <input matInput name="date" [matDatepicker]="picker" placeholder="Select Date" [ngModel]="log?.date" #date="ngModel">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
-      <mat-error *ngIf="form.get('date').invalid">Please enter your workout date</mat-error>
+      <mat-error *ngIf="date.invalid">Please Select A Date</mat-error>
     </mat-form-field>
-
+    <!-- textarea for main content -->
     <mat-form-field>
-      <input matInput type="text" formControlName="title" placeholder="Log Title">
-      <mat-error *ngIf="form.get('title').invalid">Please enter a log title.</mat-error>
+      <textarea matInput rows="4" name="content" [ngModel]="log?.content" required placeholder="Log Your Workout Here"
+        #content="ngModel"></textarea>
+      <mat-error *ngIf="content.invalid">Tell us where all that sweat came from.</mat-error>
     </mat-form-field>
-
     <mat-form-field>
-      <textarea matInput rows="4" formControlName="content" placeholder="Log Content"></textarea>
-      <mat-error *ngIf="form.get('content').invalid">Please enter a log title.</mat-error>
+      <input matInput name="duration" [ngModel]="log?.duration" placeholder="Duration" />
     </mat-form-field>
-
-    <mat-form-field>
-      <input matInput type="text" formControlName="duration" placeholder="Log Duration">
-      <mat-error *ngIf="form.get('duration').invalid">Please enter the duration.</mat-error>
-    </mat-form-field>
-
+    <!-- Submit button -->
     <button mat-raised-button color="accent" type="submit">Save Workout</button>
-
   </form>
-
 </mat-card>

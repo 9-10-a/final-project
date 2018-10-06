@@ -9,7 +9,9 @@ import {
   MatPaginatorModule,
   MatDialogModule,
   MatNativeDateModule,
-  MatDatepickerModule
+  MatDatepickerModule,
+  MatSelectModule,
+  MatCheckboxModule
 } from '@angular/material';
 
 @NgModule({
@@ -23,7 +25,9 @@ import {
     MatPaginatorModule,
     MatDialogModule,
     MatNativeDateModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSelectModule,
+    MatCheckboxModule
   ]
 })
 export class AngularMaterialModule {}

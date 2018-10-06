@@ -10,7 +10,7 @@ router.post('', checkAuth, LogsController.createLog);
 
 router.put('/:id', checkAuth, LogsController.updateLog);
 
-router.get('', LogsController.getLogs);
+router.get('', checkAuth, LogsController.getLogs);
 
 router.get('/:id', LogsController.getLog);
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 
 import { LogsService } from '../logs.service';
@@ -14,12 +14,10 @@ import { AuthService } from '../../users/auth.service';
 })
 export class LogCreateComponent implements OnInit, OnDestroy {
   enteredDate = '';
-  enteredTitle = '';
   enteredContent = '';
   enteredDuration = '';
   log: Log;
   isLoading = false;
-  form: FormGroup;
   private mode = 'create';
   private logId: string;
   private authStatusSub: Subscription;
@@ -36,14 +34,6 @@ export class LogCreateComponent implements OnInit, OnDestroy {
       .subscribe(authStatus => {
         this.isLoading = false;
       });
-    this.form = new FormGroup({
-      date: new FormControl(null, { validators: [Validators.required] }),
-      title: new FormControl(null, {
-        validators: [Validators.required, Validators.minLength(3)]
-      }),
-      content: new FormControl(null, { validators: [Validators.required] }),
-      duration: new FormControl(null, { validators: [Validators.required] })
-    });
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('logId')) {
         this.mode = 'edit';
@@ -54,47 +44,41 @@ export class LogCreateComponent implements OnInit, OnDestroy {
           this.log = {
             id: logData._id,
             date: logData.date,
-            title: logData.title,
             content: logData.content,
             duration: logData.duration,
             creator: logData.creator
           };
-          this.form.setValue({
-            date: this.log.date,
-            title: this.log.title,
-            content: this.log.content,
-            duration: this.log.duration
-          });
         });
       } else {
+        // if we don't have a log id we are in create mode
         this.mode = 'create';
         this.logId = null;
       }
     });
   }
 
-  onSaveLog() {
-    if (this.form.invalid) {
+  onSaveLog(form: NgForm) {
+    if (form.invalid) {
       return;
     }
     this.isLoading = true;
     if (this.mode === 'create') {
       this.logsService.addLog(
-        this.form.value.date,
-        this.form.value.title,
-        this.form.value.content,
-        this.form.value.duration
+        form.value.date,
+        form.value.content,
+        form.value.duration,
+        form.value.creator
       );
     } else {
       this.logsService.updateLog(
         this.logId,
-        this.form.value.date,
-        this.form.value.title,
-        this.form.value.content,
-        this.form.value.duration
+        form.value.date,
+        form.value.content,
+        form.value.duration,
+        form.value.creator
       );
     }
-    this.form.reset();
+    form.resetForm();
   }
 
   ngOnDestroy() {
