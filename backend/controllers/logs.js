@@ -5,9 +5,7 @@ exports.createLog = (req, res, next) => {
   const log = new Log({
     date: req.body.date,
     content: req.body.content,
-    minutes: req.body.minutes,
-    seconds: req.body.seconds,
-    score: req.body.score,
+    duration: req.body.duration,
     creator: req.userData.userId
   });
   // saves to db
@@ -24,9 +22,7 @@ exports.updateLog = (req, res, next) => {
     _id: req.body.id,
     date: req.body.date,
     content: req.body.content,
-    minutes: req.body.minutes,
-    seconds: req.body.seconds,
-    score: req.body.score,
+    duration: req.body.duration,
     creator: req.userData.userId
   });
   Log.updateOne({ _id: req.params.id }, log).then(result => {

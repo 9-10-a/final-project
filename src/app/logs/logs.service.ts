@@ -30,9 +30,7 @@ export class LogsService {
                 id: log._id,
                 date: log.date,
                 content: log.content,
-                minutes: log.minutes,
-                seconds: log.seconds,
-                score: log.score,
+                duration: log.duration,
                 creator: log.creator
               };
             }),
@@ -60,29 +58,18 @@ export class LogsService {
       _id: string;
       date: string;
       content: string;
-      minutes: string;
-      seconds: string;
-      score: string;
+      duration: string;
       creator: string;
     }>(BACKEND_URL + id);
   }
 
   // add new log
-  addLog(
-    date: string,
-    content: string,
-    minutes: string,
-    seconds: string,
-    score: string,
-    creator: string
-  ) {
+  addLog(date: string, content: string, duration: string, creator: string) {
     const log: Log = {
       id: null,
       date: date,
       content: content,
-      minutes: minutes,
-      seconds: seconds,
-      score: score,
+      duration: duration,
       creator: creator
     };
     this.http
@@ -98,18 +85,14 @@ export class LogsService {
     id: string,
     date: string,
     content: string,
-    minutes: string,
-    seconds: string,
-    score: string,
+    duration: string,
     creator: string
   ) {
     const log: Log = {
       id: id,
       date: date,
       content: content,
-      minutes: minutes,
-      seconds: seconds,
-      score: score,
+      duration: duration,
       creator: creator
     };
     this.http.put(BACKEND_URL + id, log).subscribe(response => {

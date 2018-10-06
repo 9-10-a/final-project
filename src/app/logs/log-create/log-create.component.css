@@ -6,25 +6,3 @@ textarea {
 mat-spinner {
   margin: auto;
 }
-.container {
-  width: 40%;
-}
-.one {
-  width: 50%;
-  float: left;
-}
-.two {
-  margin-left: 50%;
-}
-mat-option {
-  text-align: center;
-}
-
-.date {
-  width: 40%;
-}
-
-hr {
-  margin-top: 20px;
-  margin-bottom: 20px;
-}

@@ -4,9 +4,7 @@ const mongoose = require('mongoose');
 const logSchema = mongoose.Schema({
   date: { type: String, required: true },
   content: { type: String, required: true },
-  minutes: { type: String, required: false },
-  seconds: { type: String, required: false },
-  score: { type: String, required: false },
+  duration: { type: String, required: false },
   creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true }
 });
 

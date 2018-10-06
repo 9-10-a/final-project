@@ -7,14 +7,9 @@
     <!-- required so always shows -->
     <p>{{ log.content }}</p>
     <!-- hides if user does not enter a time -->
-    <div [hidden]="log.minutes == null">
+    <div [hidden]="log.duration == null">
       Duration:<br>
-      {{ log.minutes }}:{{ log.seconds }}
-    </div>
-    <!-- hides score is not entered -->
-    <div [hidden]="log.score == null">
-      Score:<br>
-      {{ log.score }}
+      {{ log.duration }}
     </div>
     <!-- protect users logs if not authenticated cannot edit or delete a log -->
     <mat-action-row *ngIf="userIsAuthenticated && userId === log.creator">
