@@ -13,9 +13,9 @@ export class AboutComponent implements OnInit {
     loves: 'to impact the future of coding.',
     cols: 4, rows: 2, color: '#D9EDD9'},
     {name: 'DONNA CAMPBELL',
-    area: 'Houston, Texas',
-    content: 'Favourite exercise: Horseback Riding',
-    loves: 'Loves: Fishing and playing with her grandchildren',
+    area: 'Battle Mountain, Nevada',
+    content: 'Favourite exercise: Horseback riding',
+    loves: 'Loves: Playing with her grandchildren',
     cols: 2, rows: 2, color: '#FFCC3B'},
     {name: 'CLIFF MCCALL',
     area: 'Houston, Texas',
@@ -28,9 +28,9 @@ export class AboutComponent implements OnInit {
     loves: 'Loves: Playing the piano',
     cols: 4, rows: 2, color: '#FFCC3B'},
     {name: 'TABITHA',
-    area: 'Houston, Texas',
-    content: 'Favourite exercise: Running',
-    loves: 'Loves: Going out to eat',
+    area: 'Plano, Texas',
+    content: 'Favourite exercise: Running & stair stepper',
+    loves: 'Loves: Pranks',
     cols: 2, rows: 2, color: '#E8540C'},
     {name: 'WILL HARRIS',
     area: 'Redding, California',
@@ -38,7 +38,6 @@ export class AboutComponent implements OnInit {
     loves: 'Loves: Coding & watching action movies',
     cols: 2, rows: 2, color: '#FFCC3B'},
   ];
-
 
   constructor() {}
 

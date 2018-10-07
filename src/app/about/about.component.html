@@ -1,13 +1,13 @@
-  <div class="basic-container">
-    <mat-grid-list cols="4" rows="6" rowHeight = "400px">
-      <img src="assets/images/running.jpg">
-    </mat-grid-list>
-    <mat-grid-list cols="4" rowHeight="60px">
-      <mat-grid-tile
-          *ngFor="let tile of tiles"
-          [colspan]="tile.cols"
-          [rowspan]="tile.rows"
-          [style.background]="tile.color">
+<div class="basic-container">
+  <mat-grid-list cols="4" rows="6" rowHeight = "400px">
+    <img src="assets/images/running.jpg">
+  </mat-grid-list>
+  <mat-grid-list cols="4" rowHeight="60px">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
         {{tile.name}}
         <br>
         {{tile.area}}
@@ -15,98 +15,7 @@
         {{tile.content}}
         <br>
         {{tile.loves}}
-      </mat-grid-tile>
-
-
-
-    </mat-grid-list>
-  </div>
-
-
-
-
-
-<!--
-
-<p>
-          Name: Donna Campbell<br>
-          Lives in: Houston, Texas<br>
-          Favourite exercise: Horseback Riding<br>
-          Loves: Fishing and playing with her grandchildren
-        </p>
-
-
-  <mat-grid-tile cols="4" rows="4" rowHeight="fit">
-          <img src='assets/images/running.jpg'>
-          <p>
-            Name: Cliff Mccall<br>
-            Lives in: Houston, Texas<br>
-            Favourite exercise: Cross Training<br>
-            Loves: Coding & watching movies
-          </p>
-        </mat-grid-tile>
-*ngFor="let tile of tiles"
-          [colspan]="tile.cols"
-          [rowspan]="tile.rows"
-
-    </mat-grid-list>
-
-
-<div class="container-fluid" style="background-color: lavenderblush">
-  <h1>Flower Picture Gallery</h1>
-  <p>This screen will resize in mobile and desktop browsers.</p>
-  <div class="row">
-    <div class="col-xs-12 text-center" style="background-color:lightpink"><h2>My personal flower garden</h2></div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 text-center" style="background-color:lightpink"><p>In nine out of ten weddings floral arrangements are table centerpieces and more often than not that these are complimentary to the bridal bouquet itself. Choosing the right flower is not always easy as its availability differs from country to country and is almost always season dependent.</p></div>
- </div>
-  <div class="row">
-    <div class="col-xs-3" style="background-color:lavenderblush;">Peonies
-        <img class="img-responsive" src="Flower1.jpg">
-    </div>
-    <div class="col-xs-3" style="background-color:lavenderblush;">In the garden
-        <img class="img-responsive" src="Flower2.jpg">
-    </div>
-    <div class="col-xs-3" style="background-color:lavenderblush;">Wedding arrangement
-        <img class="img-responsive" src="Flower3.jpg">
-    </div>
-    <div class="col-xs-3" style="background-color:lavenderblush;">Picking peonies
-        <img class="img-responsive" src="Flower4.jpg">
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-xs-3" style="background-color:lavenderblush;">Wedding bouquet
-        <img class="img-responsive" src="Flower5.jpg">
-    </div>
-    <div class="col-xs-3" style="background-color:lavenderblush;">Our flowers
-        <img class="img-responsive" src="Flower6.jpg">
-    </div>
-    <div class="col-xs-3" style="background-color:lavenderblush;">Daffodils
-        <img class="img-responsive" src="Flower7.jpg">
-    </div>
-    <div class="col-xs-3" style="background-color:lavenderblush;">In bloom
-        <img class="img-responsive" src="Flower8.jpg">
-    </div>
-  </div>
-
-  <div class="row">
-
-    <div class="col-xs-6" style="background-color:lavenderblush;">On the farm video
-        <div class="player">
-            <video src="video-main.mp4" height="168"
-                    width="300" controls>Your browser does not support HTML5 video.</video>
-        </div>
-    </div>
-    <div class="col-xs-6" style="background-color:lavenderblush;">Wedding bouquet
-        <img class="img-responsive" src="Flower9.jpg">
-    </div>
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
 
-</body>
-
-
-
-
--->
