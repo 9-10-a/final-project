@@ -11,7 +11,9 @@ import {
   MatNativeDateModule,
   MatDatepickerModule,
   MatSelectModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatGridListModule,
+  // MatGridList
 } from '@angular/material';
 
 @NgModule({
@@ -27,7 +29,8 @@ import {
     MatNativeDateModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatGridListModule
   ]
 })
 export class AngularMaterialModule {}

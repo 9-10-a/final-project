@@ -1,3 +1,8 @@
+mat-toolbar {
+  padding: 40px;
+}
+
+/*
 .box {
   margin: 50px auto;
   background: #5FCF80;
@@ -14,7 +19,8 @@
 }
 .rotate:hover {
   transition: all 1s ease-in-out;
-}
+}*/
+
 ul {
   list-style: none;
   padding: 0;

@@ -1,0 +1,21 @@
+<div class="basic-container">
+  <mat-grid-list cols="4" rows="6" rowHeight = "400px">
+    <img src="assets/images/running.jpg">
+  </mat-grid-list>
+  <mat-grid-list cols="4" rowHeight="60px">
+    <mat-grid-tile
+        *ngFor="let tile of tiles"
+        [colspan]="tile.cols"
+        [rowspan]="tile.rows"
+        [style.background]="tile.color">
+        {{tile.name}}
+        <br>
+        {{tile.area}}
+        <br>
+        {{tile.content}}
+        <br>
+        {{tile.loves}}
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+

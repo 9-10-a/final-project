@@ -24,6 +24,8 @@
     "@angular/platform-browser": "^6.0.0",
     "@angular/platform-browser-dynamic": "^6.0.0",
     "@angular/router": "^6.0.0",
+    "@angular2-material/grid-list": "^2.0.0-alpha.8-3",
+    "@material/grid-list": "^0.40.0",
     "angular-animate": "^1.7.4",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
