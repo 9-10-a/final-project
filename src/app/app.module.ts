@@ -14,6 +14,8 @@ import { LogsModule } from './logs/logs.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TimerComponent } from './timer/timer.component';
+import { AboutComponent } from './about/about.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { TimerComponent } from './timer/timer.component';
     ErrorComponent,
     HomepageComponent,
     TimerComponent,
-    ProfileComponent
+    ProfileComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

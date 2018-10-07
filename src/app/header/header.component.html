@@ -1,21 +1,35 @@
 <mat-toolbar>
-  <span>SweatLog App!</span>
-  <span class="spacer"></span>
-  <ul>
-    <li *ngIf="userIsAuthenticated">
-      <button mat-button (click)="onLogout()">Logout</button>
-    </li>
-    <li *ngIf="userIsAuthenticated">
-      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Post</a>
-    </li>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
-    </li>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
-    </li>
-  </ul>
+  <div>
+    <a mat-raised-button routerLink="/home" routerLinkActive="mat-accent">SWEATLOG</a>
+  </div>
+  &nbsp;
+  <div>
+    <a mat-raised-button routerLink="/about" routerLinkActive="mat-accent">About</a>
+  </div>
+  &nbsp;
+ <div *ngIf="!userIsAuthenticated">
+    <a mat-raised-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
+  </div>
+  &nbsp;
+  <div *ngIf="!userIsAuthenticated">
+    <a mat-raised-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
+  </div>
+  &nbsp;
+  <div class="logout" *ngIf="userIsAuthenticated">
+    <button mat-raised-button color="accent" (click)="onLogout()">Logout</button>
+  </div>
+  &nbsp;
+  <div class="post" *ngIf="userIsAuthenticated">
+    <button mat-raised-button color="accent" routerLink="/create" routerLinkActive="mat-accent">New Post</button>
+  </div>
 </mat-toolbar>
+
+
+
+<!--  commented out the below code to be fixed
+The above code works.
+
+
 
 <script src="js/lib/angular.js"></script>
 <script src="js/lib/angular-animate.js"></script>
@@ -37,3 +51,5 @@
   <span ng-bind="Message"></span>
 
 </div>
+
+-->
