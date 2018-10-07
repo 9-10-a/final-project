@@ -27,7 +27,7 @@
     "@angular2-material/grid-list": "^2.0.0-alpha.8-3",
     "@material/grid-list": "^0.40.0",
     "angular-animate": "^1.7.4",
-    "bcrypt": "^3.0.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "core-js": "^2.5.4",
     "crypto": "^1.0.1",

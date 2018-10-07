@@ -15,12 +15,14 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'create', component: LogCreateComponent, canActivate: [AuthGuard] },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'edit/:logId',
     component: LogCreateComponent,
     canActivate: [AuthGuard]
   },
-  { path: 'auth', loadChildren: './users/auth.module#AuthModule' }
+  { path: 'auth', loadChildren: './users/auth.module#AuthModule' },
+  { path: 'profile', component: ProfileComponent}
 ];
 
 @NgModule({

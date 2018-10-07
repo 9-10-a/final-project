@@ -1,10 +1,4 @@
-<div class="hcontainer">
-  <div>
-    <img class="img-responsive" src='assets/images/workout.jpg'>
-  </div>
-  <div class="hbuttons">
-    <a mat-raised-button color="primary" routerLink="auth/login">Login</a>
-    &nbsp;
-    <a mat-raised-button color="primary" routerLink="auth/signup">Sign Up</a>
-  </div>
+<div *ngIf="!userIsAuthenticated" >
+  <img class="img-responsive" src='assets/images/workout.jpg'>
 </div>
+<app-profile *ngIf="userIsAuthenticated"></app-profile>

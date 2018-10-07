@@ -1,37 +1,36 @@
-<mat-toolbar>
-  <div>
-    <a mat-raised-button routerLink="/home" routerLinkActive="mat-accent">SWEATLOG</a>
-  </div>
-  &nbsp;
-  <div>
-    <a mat-raised-button routerLink="/about" routerLinkActive="mat-accent">About</a>
-  </div>
-  &nbsp;
- <div *ngIf="!userIsAuthenticated">
-    <a mat-raised-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
-  </div>
-  &nbsp;
-  <div *ngIf="!userIsAuthenticated">
-    <a mat-raised-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
-  </div>
-  &nbsp;
-  <div class="logout" *ngIf="userIsAuthenticated">
-    <button mat-raised-button color="accent" (click)="onLogout()">Logout</button>
-  </div>
-  &nbsp;
-  <div class="post" *ngIf="userIsAuthenticated">
-    <button mat-raised-button color="accent" routerLink="/create" routerLinkActive="mat-accent">New Post</button>
-  </div>
+<mat-toolbar color="primary">
+  <span>
+    <a routerLink="/home" routerLinkActive="mat-accent">SweatLog</a>
+  </span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Log</a>
+    </li>
+  </ul>
+  <ul>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
+    </li>
+  </ul>
+  <ul>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
+    </li>
+  </ul>
+  <ul>
+    <li>
+        <a mat-button routerLink="/about" routerLinkActive="mat-accent">About</a>
+    </li>
+  </ul>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <button mat-button (click)="onLogout()">Logout</button>
+    </li>
+  </ul>
 </mat-toolbar>
 
-
-
-<!--  commented out the below code to be fixed
-The above code works.
-
-
-
-<script src="js/lib/angular.js"></script>
+<!-- <script src="js/lib/angular.js"></script>
 <script src="js/lib/angular-animate.js"></script>
 <script src="header.component.css"></script>
 
@@ -44,12 +43,10 @@ The above code works.
     }
   });
 </script>
-<div ng-app="Header" ng-controller="MyController">
-  <input type="button" value="HOME" ng-click="ButtonClick()" />
-  <br />
-  <br />
-  <span ng-bind="Message"></span>
+<div ng-app="Header" ng-controller="MyController"> -->
+  <!-- <input type="button" value="HOME" ng-click="ButtonClick()" /> -->
+  <!-- <br />
+  <br /> -->
+  <!-- <span ng-bind="Message"></span>
 
-</div>
-
--->
+</div> -->
