@@ -1,3 +1,7 @@
 .hbuttons {
   margin: 5px;
 }
+img {
+  height: 100vh;
+  width: auto;
+}
