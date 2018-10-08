@@ -17,6 +17,7 @@ import { BrowserModule } from '@angular/platform-browser';
     RouterModule,
     FormsModule,
     BrowserModule
-  ]
+  ],
+  exports: [LogListComponent]
 })
 export class LogsModule {}

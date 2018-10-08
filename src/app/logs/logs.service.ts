@@ -76,7 +76,7 @@ export class LogsService {
       .post<{ message: string; logId: string }>(BACKEND_URL, log)
       .subscribe(responseData => {
         // routing after a log is saved - Service needs router module for this
-        this.router.navigate(['/log']);
+        this.router.navigate(['/profile']);
       });
   }
 
@@ -97,7 +97,7 @@ export class LogsService {
     };
     this.http.put(BACKEND_URL + id, log).subscribe(response => {
       // routing after a log is saved - Service needs router module for this
-      this.router.navigate(['/log']);
+      this.router.navigate(['/profile']);
     });
   }
 

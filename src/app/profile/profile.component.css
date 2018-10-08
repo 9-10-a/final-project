@@ -1,6 +1,6 @@
 mat-card {
   background-color: lemonchiffon;
-  height: 50vh;
+  height: 75vh;
 }
 
 textarea,
@@ -14,11 +14,4 @@ img {
 
 button {
   color: green;
-}
-.left {
-  width: 30%;
-  float: left;
-}
-.right {
-  margin-left: 30%;
 }
