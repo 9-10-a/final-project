@@ -1,16 +1,24 @@
-mat-card{
-    background-color: lemonchiffon;
+mat-card {
+  background-color: lemonchiffon;
+  height: 50vh;
 }
 
-
-textarea, input {
-    background-color: aquamarine;
+textarea,
+input {
+  background-color: aquamarine;
 }
 
-img{
-    border: 5px;
+img {
+  border: 5px;
 }
 
-button{
-    color: green;
+button {
+  color: green;
+}
+.left {
+  width: 30%;
+  float: left;
+}
+.right {
+  margin-left: 30%;
 }
