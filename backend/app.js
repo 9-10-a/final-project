@@ -41,10 +41,14 @@ app.use((req, res, next) => {
 // importing routes
 const logsRoutes = require('./routes/logs');
 const userRoutes = require('./routes/user');
+const benchmarksRoutes = require('./routes/benchmarks');
+
 
 // Path
 app.use('/api/logs', logsRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/benchmarks', benchmarksRoutes);
+
 
 var distDir = __dirname + '/dist/group-project/';
 app.use(express.static(distDir));

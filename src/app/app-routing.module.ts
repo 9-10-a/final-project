@@ -7,6 +7,7 @@ import { LogCreateComponent } from './logs/log-create/log-create.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
+import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'log', component: LogListComponent },
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'profile/benchmarkcreate', component: BenchmarkCreateComponent },
   { path: 'create', component: LogCreateComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
@@ -22,7 +24,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { path: 'auth', loadChildren: './users/auth.module#AuthModule' },
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({
