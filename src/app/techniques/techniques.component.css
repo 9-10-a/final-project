@@ -20,26 +20,12 @@
   right: 0;
 }
 
-.videoheader {
-  display: block;
-  margin-left:auto;
-  margin-right:auto;
-}
-
 .videolayout {
-  /*width: 600px;
-  height: 640px;*/
   display: block;
   margin-left:auto;
   margin-right:auto;
 }
 
-mat-card {
-  width: 600px;
-  height: 640px;
-  display: block;
-  margin-left:auto;
-  margin-right:auto;
-}
+
 
 
