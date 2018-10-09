@@ -11,15 +11,21 @@
   z-index: 0;
   display: grid;
 }
-/*mat-card {
-  margin: auto;
-  /* width: 50%;
-}*/
 
-mat-card{
-  width: 400px;
-  height: 440px;
+.example-stretched-tabs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.videolayout {
   display: block;
   margin-left:auto;
   margin-right:auto;
 }
+
+
+
+
