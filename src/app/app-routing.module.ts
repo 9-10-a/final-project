@@ -7,6 +7,7 @@ import { LogCreateComponent } from './logs/log-create/log-create.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
+import { TimerComponent } from './timer/timer.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'create', component: LogCreateComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'timer', component: TimerComponent },
   {
     path: 'edit/:logId',
     component: LogCreateComponent,

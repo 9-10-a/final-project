@@ -13,8 +13,11 @@ import { AngularMaterialModule } from './angular-material.module';
 import { LogsModule } from './logs/logs.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
-import { TimerComponent } from './timer/timer.component';
+
 import { AboutComponent } from './about/about.component';
+import { TimerComponent } from './timer/timer.component';
+import { SimpleTimer } from 'ng2-simple-timer';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ import { AboutComponent } from './about/about.component';
     HomepageComponent,
     TimerComponent,
     ProfileComponent,
-    AboutComponent
+    AboutComponent    
+    
   ],
   imports: [
     BrowserModule,
@@ -33,10 +37,13 @@ import { AboutComponent } from './about/about.component';
     AngularMaterialModule,
     HttpClientModule,
     LogsModule
+     
+    
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+   
   ],
   bootstrap: [AppComponent],
   entryComponents: [ErrorComponent]
