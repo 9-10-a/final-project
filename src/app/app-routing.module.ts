@@ -8,6 +8,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
 import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
+import { TechniquesComponent } from './techniques/techniques.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'profile/benchmarkcreate', component: BenchmarkCreateComponent },
   { path: 'create', component: LogCreateComponent, canActivate: [AuthGuard] },
+  { path: 'techniques', component: TechniquesComponent, canActivate: [AuthGuard] },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'edit/:logId',

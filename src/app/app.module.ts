@@ -17,6 +17,7 @@ import { TimerComponent } from './timer/timer.component';
 import { AboutComponent } from './about/about.component';
 import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
 import { BenchmarkListComponent } from './benchmarks/benchmark-list/benchmark-list.component';
+import { TechniquesComponent } from './techniques/techniques.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
@@ -29,7 +30,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProfileComponent,
     AboutComponent,
     BenchmarkCreateComponent,
-    BenchmarkListComponent
+    BenchmarkListComponent,
+    TechniquesComponent
   ],
   imports: [
     BrowserModule,

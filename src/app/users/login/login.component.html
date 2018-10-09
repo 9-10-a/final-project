@@ -1,5 +1,11 @@
 <div class="background">
+  <br>
   <mat-card>
+    <div>
+      <h4>
+        Login to SweatLog
+      </h4>
+    </div>
     <mat-spinner *ngIf="isLoading"></mat-spinner>
     <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
       <mat-form-field>
