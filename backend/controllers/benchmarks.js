@@ -62,7 +62,7 @@ exports.getBenchmarks = (req, res, next) => {
 };
 
 exports.getBenchmark = (req, res, next) => {
-  Benchmarkog.findById(req.params.id)
+  Benchmark.findById(req.params.id)
     .then(benchmark => {
       if (benchmark) {
         res.status(200).json(benchmark);

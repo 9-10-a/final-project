@@ -15,3 +15,12 @@ img {
 button {
   color: green;
 }
+app-benchmark-list {
+  right: 0;
+}
+h2 {
+  text-align: center;
+}
+app-log-list {
+  margin-top: 5px;
+}

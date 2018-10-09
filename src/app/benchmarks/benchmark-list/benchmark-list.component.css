@@ -6,25 +6,31 @@ mat-card {
   color: inherit;
   width: 50%;
 }
-
+mat-card:nth-child(odd) {
+  float: right;
+  right: 0;
+}
+mat-card:nth-child(even) {
+  float: left;
+  left: 0;
+}
 mat-spinner {
   margin: auto;
 }
-
-.info-text {
-  text-align: center;
-}
-
 mat-grid-tile {
   border: 2px solid lightgray;
   font-size: 1.5em;
   font-family: Roboto;
 }
-
+ul {
+  list-style: none;
+}
 a {
   color: inherit;
   text-decoration: none;
 }
+
+/*
 .header {
   position: absolute;
   text-align: center;
@@ -35,10 +41,10 @@ a {
 .content {
   padding: 2px;
 }
-.footer {
+/* .footer {
   position: absolute;
-  left: 5px;
+  left: 25em;
   bottom: 5px;
   padding: 2px;
-  float: right;
-}
+  float: left;
+} */

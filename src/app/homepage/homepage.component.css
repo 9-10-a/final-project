@@ -4,9 +4,15 @@
   left: 0;
   bottom: 0;
   right: 0;
-  background: url('../../assets/images/workout.jpg') no-repeat center top;
+  background: url('../../assets/images/homepage.jpg') no-repeat center top;
   background-size: cover;
   content: '';
   z-index: 0;
   display: grid;
+}
+.welcome {
+  background-color: rgba(255, 255, 255, 0.849);
+  width: 75%;
+  top: 10em;
+  margin: auto;
 }

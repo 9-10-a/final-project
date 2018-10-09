@@ -18,11 +18,20 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'profile/benchmarkcreate', component: BenchmarkCreateComponent },
   { path: 'create', component: LogCreateComponent, canActivate: [AuthGuard] },
-  { path: 'techniques', component: TechniquesComponent, canActivate: [AuthGuard] },
+  {
+    path: 'techniques',
+    component: TechniquesComponent,
+    canActivate: [AuthGuard]
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: 'edit/:logId',
     component: LogCreateComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'edit-benchmark/:benchmarkId',
+    component: BenchmarkCreateComponent,
     canActivate: [AuthGuard]
   },
   { path: 'auth', loadChildren: './users/auth.module#AuthModule' },

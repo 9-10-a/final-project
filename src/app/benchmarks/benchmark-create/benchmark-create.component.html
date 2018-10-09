@@ -1,18 +1,20 @@
-<mat-card>
-  <mat-spinner *ngIf="isLoading"></mat-spinner>
-  <form (submit)="onSaveBenchmark(benchmarkForm)" #benchmarkForm="ngForm" *ngIf="!isLoading">
-    <mat-form-field>
-      <!-- ? used to force angular to check whether a benchmark exist before it tries to populate the field to avoid errors. -->
-      <input matInput type="text" name="title" [ngModel]="benchmark?.title" required minlength="3" placeholder="Personal Record"
-        #title="ngModel">
-      <mat-error *ngIf="title.invalid">What record did you break?</mat-error>
-    </mat-form-field>
-    <mat-form-field>
-      <textarea matInput rows="2" name="content" [ngModel]="benchmark?.content" required placeholder="Enter the results"
-        #content="ngModel"></textarea>
-      <mat-error *ngIf="content.invalid">Was it based on duration, load or a score.</mat-error>
-    </mat-form-field>
-    <button mat-raised-button color="accent" type="submit">Save</button>
-    <a mat-raised-button routerLink="/profile">Cancel</a>
-  </form>
-</mat-card>
+<div class="background">
+  <mat-card>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onSaveBenchmark(benchmarkForm)" #benchmarkForm="ngForm" *ngIf="!isLoading">
+      <mat-form-field>
+        <!-- ? used to force angular to check whether a benchmark exist before it tries to populate the field to avoid errors. -->
+        <input matInput type="text" name="title" [ngModel]="benchmark?.title" required minlength="3" placeholder="Personal Record"
+          #title="ngModel">
+        <mat-error *ngIf="title.invalid">What record did you break?</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput rows="2" name="content" [ngModel]="benchmark?.content" required placeholder="Enter the results"
+          #content="ngModel"></textarea>
+        <mat-error *ngIf="content.invalid">Was it based on duration, load or a score.</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="accent" type="submit">Save</button>
+      <a mat-raised-button routerLink="/profile">Cancel</a>
+    </form>
+  </mat-card>
+</div>
