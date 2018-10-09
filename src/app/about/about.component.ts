@@ -7,36 +7,60 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
   tiles = [
-    {name: 'WELCOME TO SWEAT LOG',
-    area: 'We are CodeFive, a group of proactive',
-    content: 'and like-minded coders with a desire',
-    loves: 'to impact the future of coding.',
-    cols: 4, rows: 2, color: '#D9EDD9'},
-    {name: 'DONNA CAMPBELL',
-    area: 'Battle Mountain, Nevada',
-    content: 'Favourite exercise: Horseback riding',
-    loves: 'Loves: Playing with her grandchildren',
-    cols: 2, rows: 2, color: '#FFCC3B'},
-    {name: 'CLIFF MCCALL',
-    area: 'Houston, Texas',
-    content: 'Favourite exercise: Weight-training',
-    loves: 'Loves: Watching action movies & coding',
-    cols: 2, rows: 2, color: '#E8540C'},
-    {name: 'REGINA CLIFFORD',
-    area: 'Jeddah, Saudi Arabia',
-    content: 'Favourite exercise: Swimming & pilates',
-    loves: 'Loves: Playing the piano',
-    cols: 4, rows: 2, color: '#FFCC3B'},
-    {name: 'TABITHA',
-    area: 'Plano, Texas',
-    content: 'Favourite exercise: Running & stair stepper',
-    loves: 'Loves: Pranks',
-    cols: 2, rows: 2, color: '#E8540C'},
-    {name: 'WILL HARRIS',
-    area: 'Redding, California',
-    content: 'Favourite exercise: Cycling',
-    loves: 'Loves: Coding & watching action movies',
-    cols: 2, rows: 2, color: '#FFCC3B'},
+    {
+      name: 'WELCOME TO SWEAT LOG',
+      area: 'We are CodeFive, a group of proactive',
+      content: 'and like-minded coders with a desire',
+      loves: 'to impact the future of coding.',
+      cols: 4,
+      rows: 2,
+      color: '#D9EDD9'
+    },
+    {
+      name: 'DONNA CAMPBELL',
+      area: 'Battle Mountain, Nevada',
+      content: 'Favourite exercise: Horseback riding',
+      loves: 'Loves: Playing with her grandchildren',
+      cols: 2,
+      rows: 2,
+      color: '#FFCC3B'
+    },
+    {
+      name: 'CLIFF MCCALL',
+      area: 'Temple, Texas',
+      content: 'Favourite exercise: Deadlift',
+      loves: 'Loves: Crossfit, the Alabama Crimson Tide & coding',
+      cols: 2,
+      rows: 2,
+      color: '#E8540C'
+    },
+    {
+      name: 'REGINA CLIFFORD',
+      area: 'Jeddah, Saudi Arabia',
+      content: 'Favourite exercise: Swimming & pilates',
+      loves: 'Loves: Playing the piano',
+      cols: 4,
+      rows: 2,
+      color: '#FFCC3B'
+    },
+    {
+      name: 'TABITHA',
+      area: 'Plano, Texas',
+      content: 'Favourite exercise: Running & stair stepper',
+      loves: 'Loves: Pranks',
+      cols: 2,
+      rows: 2,
+      color: '#E8540C'
+    },
+    {
+      name: 'WILL HARRIS',
+      area: 'Redding, California',
+      content: 'Favourite exercise: Cycling',
+      loves: 'Loves: Coding & watching action movies',
+      cols: 2,
+      rows: 2,
+      color: '#FFCC3B'
+    }
   ];
 
   constructor() {}

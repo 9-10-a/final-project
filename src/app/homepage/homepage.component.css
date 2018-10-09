@@ -1,7 +1,12 @@
-.hbuttons {
-  margin: 5px;
-}
-img {
-  height: 100vh;
-  width: auto;
+.background {
+  position: absolute;
+  top: 5em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('../../assets/images/workout.jpg') no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: 0;
+  display: grid;
 }

@@ -8,12 +8,19 @@ exports.createBenchmark = (req, res, next) => {
     creator: req.userData.userId
   });
   // saves to db
-  benchmark.save().then(createdBenchmark => {
-    res.status(201).json({
-      message: 'Benchmark added successfully',
-      BenchmarkId: createdBenchmark._id
+  benchmark
+    .save()
+    .then(createdBenchmark => {
+      res.status(201).json({
+        message: 'Benchmark added successfully',
+        BenchmarkId: createdBenchmark._id
+      });
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: 'Creating a post failed!'
+      });
     });
-  });
 };
 
 exports.updateBenchmark = (req, res, next) => {
@@ -23,34 +30,66 @@ exports.updateBenchmark = (req, res, next) => {
     content: req.body.content,
     creator: req.userData.userId
   });
-  Benchmark.updateOne({ _id: req.params.id }, benchmark).then(result => {
-    res.status(200).json({ message: 'Update successful!' });
-  });
+  Benchmark.updateOne({ _id: req.params.id }, benchmark)
+    .then(result => {
+      if (result.n > 0) {
+        res.status(200).json({ message: 'Update successful!' });
+      } else {
+        res.status(401).json({ message: 'Not authorized!' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: "Couldn't udpate benchmark!"
+      });
+    });
 };
 
 exports.getBenchmarks = (req, res, next) => {
   const creator = req.userData.userId;
-  Benchmark.find({ creator: creator }).then(benchmarks => {
-    res.status(200).json({
-      message: 'Benchmarks fetched successfully!',
-      benchmarks: benchmarks
+  Benchmark.find({ creator: creator })
+    .then(benchmarks => {
+      res.status(200).json({
+        message: 'Benchmarks fetched successfully!',
+        benchmarks: benchmarks
+      });
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: 'Fetching benchmarks failed!'
+      });
     });
-  });
 };
 
 exports.getBenchmark = (req, res, next) => {
-  Benchmarkog.findById(req.params.id).then(benchmark => {
-    if (benchmark) {
-      res.status(200).json(benchmark);
-    } else {
-      res.status(404).json({ message: 'Benchmark not found!' });
-    }
-  });
+  Benchmarkog.findById(req.params.id)
+    .then(benchmark => {
+      if (benchmark) {
+        res.status(200).json(benchmark);
+      } else {
+        res.status(404).json({ message: 'Benchmark not found!' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: 'Fetching benchmark failed!'
+      });
+    });
 };
 
 exports.deleteBenchmark = (req, res, next) => {
-  Benchmark.deleteOne({ _id: req.params.id }).then(result => {
-    console.log(result);
-    res.status(200).json({ message: 'Benchmark deleted!' });
-  });
+  Benchmark.deleteOne({ _id: req.params.id, creator: req.userData.userId })
+    .then(result => {
+      console.log(result);
+      if (result.n > 0) {
+        res.status(200).json({ message: 'Deletion successful!' });
+      } else {
+        res.status(401).json({ message: 'Not authorized!' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: 'Deleting benchmarks failed!'
+      });
+    });
 };
