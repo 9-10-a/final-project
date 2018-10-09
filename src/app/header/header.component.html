@@ -27,12 +27,17 @@
   </ul>
   <ul>
     <li *ngIf="userIsAuthenticated">
-        <a mat-button routerLink="/profile" routerLinkActive="mat-accent">My Profile</a>
+      <a mat-button routerLink="/profile" routerLinkActive="mat-accent">My Profile</a>
     </li>
   </ul>
   <ul>
     <li *ngIf="userIsAuthenticated">
       <a mat-button routerLink="/techniques" routerLinkActive="mat-accent">Techniques Guide</a>
+    </li>
+  </ul>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+        <a mat-button routerLink="/timer" routerLinkActive="mat-accent">Timer</a>
     </li>
   </ul>
   <ul>
