@@ -18,3 +18,9 @@ mat-card{
   margin-left:auto;
   margin-right:auto;
 }
+
+.title {
+  flex: 1 1 auto;
+  margin: 0 auto;
+  text-align: center;
+}
