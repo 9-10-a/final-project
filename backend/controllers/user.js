@@ -6,6 +6,9 @@ const User = require('../models/user');
 exports.createUser = (req, res, next) => {
   bcrypt.hash(req.body.password, 10).then(hash => {
     const user = new User({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      username: req.body.username,
       email: req.body.email,
       password: hash
     });
