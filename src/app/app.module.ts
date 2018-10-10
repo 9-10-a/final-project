@@ -13,8 +13,12 @@ import { AngularMaterialModule } from './angular-material.module';
 import { LogsModule } from './logs/logs.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
-import { TimerComponent } from './timer/timer.component';
 import { AboutComponent } from './about/about.component';
+// import { TimerComponent } from './timer/timer.component';
+import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
+import { BenchmarkListComponent } from './benchmarks/benchmark-list/benchmark-list.component';
+import { TechniquesComponent } from './techniques/techniques.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,9 +26,12 @@ import { AboutComponent } from './about/about.component';
     HeaderComponent,
     ErrorComponent,
     HomepageComponent,
-    TimerComponent,
+    // TimerComponent,
     ProfileComponent,
-    AboutComponent
+    AboutComponent,
+    BenchmarkCreateComponent,
+    BenchmarkListComponent,
+    TechniquesComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +39,9 @@ import { AboutComponent } from './about/about.component';
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
-    LogsModule
+    LogsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

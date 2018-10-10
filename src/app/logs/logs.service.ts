@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 
 import { Log } from './logs.model';
+import { log } from 'util';
 const BACKEND_URL = environment.apiUrl + '/logs/';
 
 @Injectable({ providedIn: 'root' })
@@ -25,6 +26,7 @@ export class LogsService {
       .pipe(
         map(logData => {
           return {
+            // tslint:disable-next-line:no-shadowed-variable
             logs: logData.logs.map(log => {
               return {
                 id: log._id,
@@ -79,7 +81,7 @@ export class LogsService {
       .post<{ message: string; logId: string }>(BACKEND_URL, log)
       .subscribe(responseData => {
         // routing after a log is saved - Service needs router module for this
-        this.router.navigate(['/log']);
+        this.router.navigate(['/profile']);
       });
   }
 
@@ -92,6 +94,7 @@ export class LogsService {
     duration: string,
     creator: string
   ) {
+    // tslint:disable-next-line:no-shadowed-variable
     const log: Log = {
       id: id,
       date: date,
@@ -102,7 +105,7 @@ export class LogsService {
     };
     this.http.put(BACKEND_URL + id, log).subscribe(response => {
       // routing after a log is saved - Service needs router module for this
-      this.router.navigate(['/log']);
+      this.router.navigate(['/profile']);
     });
   }
 

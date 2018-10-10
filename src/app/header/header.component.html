@@ -1,11 +1,18 @@
 <mat-toolbar color="primary">
-  <span>
+  <span *ngIf="!userIsAuthenticated">
     <a routerLink="/home" routerLinkActive="mat-accent">SweatLog</a>
+  </span>
+  <span *ngIf="userIsAuthenticated">
+    <a routerLink="/profile" routerLinkActive="mat-accent">SweatLog</a>
+  </span>
+  <br>
+  <span class="spacer">
+    <a mat-button routerLink="/about" routerLinkActive="mat-accent">About</a>
   </span>
   <span class="spacer"></span>
   <ul>
-    <li *ngIf="userIsAuthenticated">
-      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Log</a>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
     </li>
   </ul>
   <ul>
@@ -14,13 +21,23 @@
     </li>
   </ul>
   <ul>
-    <li *ngIf="!userIsAuthenticated">
-      <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/create" routerLinkActive="mat-accent">New Log</a>
     </li>
   </ul>
   <ul>
-    <li>
-        <a mat-button routerLink="/about" routerLinkActive="mat-accent">About</a>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/profile" routerLinkActive="mat-accent">My Profile</a>
+    </li>
+  </ul>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/techniques" routerLinkActive="mat-accent">Techniques Guide</a>
+    </li>
+  </ul>
+  <ul>
+    <li *ngIf="userIsAuthenticated">
+      <a mat-button routerLink="/timer" routerLinkActive="mat-accent">Timer</a>
     </li>
   </ul>
   <ul>
@@ -44,9 +61,9 @@
   });
 </script>
 <div ng-app="Header" ng-controller="MyController"> -->
-  <!-- <input type="button" value="HOME" ng-click="ButtonClick()" /> -->
-  <!-- <br />
+<!-- <input type="button" value="HOME" ng-click="ButtonClick()" /> -->
+<!-- <br />
   <br /> -->
-  <!-- <span ng-bind="Message"></span>
+<!-- <span ng-bind="Message"></span>
 
 </div> -->

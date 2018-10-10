@@ -13,6 +13,8 @@ import {
   MatSelectModule,
   MatCheckboxModule,
   MatGridListModule,
+  MatSidenavModule,
+  MatTabsModule
   // MatGridList
 } from '@angular/material';
 
@@ -30,7 +32,9 @@ import {
     MatDatepickerModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSidenavModule,
+    MatTabsModule
   ]
 })
 export class AngularMaterialModule {}
