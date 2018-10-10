@@ -3,6 +3,8 @@
   <mat-expansion-panel *ngFor="let log of logs">
     <mat-expansion-panel-header>
       {{ log.date | date: 'MMM dd, yyyy' }}
+      <br>
+      {{ log.title }}
     </mat-expansion-panel-header>
     <!-- required so always shows -->
     <p>{{ log.content }}</p>

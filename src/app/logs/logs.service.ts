@@ -31,6 +31,7 @@ export class LogsService {
               return {
                 id: log._id,
                 date: log.date,
+                title: log.title,
                 content: log.content,
                 duration: log.duration,
                 creator: log.creator
@@ -59,6 +60,7 @@ export class LogsService {
     return this.http.get<{
       _id: string;
       date: string;
+      title: string;
       content: string;
       duration: string;
       creator: string;
@@ -66,11 +68,11 @@ export class LogsService {
   }
 
   // add new log
-  addLog(date: string, content: string, duration: string, creator: string) {
-    // tslint:disable-next-line:no-shadowed-variable
+  addLog(date: string, title: string, content: string, duration: string, creator: string) {
     const log: Log = {
       id: null,
       date: date,
+      title: title,
       content: content,
       duration: duration,
       creator: creator
@@ -87,6 +89,7 @@ export class LogsService {
   updateLog(
     id: string,
     date: string,
+    title: string,
     content: string,
     duration: string,
     creator: string
@@ -95,6 +98,7 @@ export class LogsService {
     const log: Log = {
       id: id,
       date: date,
+      title: title,
       content: content,
       duration: duration,
       creator: creator

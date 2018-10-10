@@ -4,6 +4,7 @@ const sort = { date: -1 };
 exports.createLog = (req, res, next) => {
   const log = new Log({
     date: req.body.date,
+    title: req.body.title,
     content: req.body.content,
     duration: req.body.duration,
     creator: req.userData.userId
@@ -28,6 +29,7 @@ exports.updateLog = (req, res, next) => {
   const log = new Log({
     _id: req.body.id,
     date: req.body.date,
+    title: req.body.title,
     content: req.body.content,
     duration: req.body.duration,
     creator: req.userData.userId
