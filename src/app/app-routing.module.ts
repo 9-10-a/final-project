@@ -7,6 +7,12 @@ import { LogCreateComponent } from './logs/log-create/log-create.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
+<<<<<<< HEAD
+import { TimerComponent } from './timer/timer.component';
+=======
+import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
+import { TechniquesComponent } from './techniques/techniques.component';
+>>>>>>> df0780096c025c816e085cb4066d7cbcacdc20c9
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -14,15 +20,27 @@ const routes: Routes = [
   { path: 'log', component: LogListComponent },
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
+  { path: 'profile/benchmarkcreate', component: BenchmarkCreateComponent },
   { path: 'create', component: LogCreateComponent, canActivate: [AuthGuard] },
+  {
+    path: 'techniques',
+    component: TechniquesComponent,
+    canActivate: [AuthGuard]
+  },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'timer', component: TimerComponent },
   {
     path: 'edit/:logId',
     component: LogCreateComponent,
     canActivate: [AuthGuard]
   },
+  {
+    path: 'edit-benchmark/:benchmarkId',
+    component: BenchmarkCreateComponent,
+    canActivate: [AuthGuard]
+  },
   { path: 'auth', loadChildren: './users/auth.module#AuthModule' },
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent }
 ];
 
 @NgModule({

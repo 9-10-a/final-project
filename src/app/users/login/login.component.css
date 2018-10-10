@@ -5,3 +5,23 @@ mat-form-field {
 mat-spinner {
   margin: auto;
 }
+.background {
+  position: absolute;
+  top: 5em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('https://lh3.googleusercontent.com/dK_LiG2_qwiADkiDRGnwHXGNPAJEP3eZhS_LQshxdtISxsdrlApgayxzksOoBcfKqJtN4q0ZfvjuOdn7JXDy7hgX1yQJ22eyyT7NvHTwsArh3H-EiFlMvGR8Zhp_4LLF-A5gnaLjPg=w2400')
+    no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: 0;
+  display: grid;
+}
+mat-card {
+  margin: auto;
+  bottom: 10em;
+  background-color: rgba(255, 255, 255, 0.849);
+
+  /* width: 50%; */
+}

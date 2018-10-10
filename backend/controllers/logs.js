@@ -10,12 +10,19 @@ exports.createLog = (req, res, next) => {
     creator: req.userData.userId
   });
   // saves to db
-  log.save().then(createdLog => {
-    res.status(201).json({
-      message: 'Log added successfully',
-      logId: createdLog._id
+  log
+    .save()
+    .then(createdLog => {
+      res.status(201).json({
+        message: 'Log added successfully',
+        logId: createdLog._id
+      });
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: 'Creating a log failed!'
+      });
     });
-  });
 };
 
 exports.updateLog = (req, res, next) => {
@@ -27,9 +34,19 @@ exports.updateLog = (req, res, next) => {
     duration: req.body.duration,
     creator: req.userData.userId
   });
-  Log.updateOne({ _id: req.params.id }, log).then(result => {
-    res.status(200).json({ message: 'Update successful!' });
-  });
+  Log.updateOne({ _id: req.params.id }, log)
+    .then(result => {
+      if (result.n > 0) {
+        res.status(200).json({ message: 'Update successful!' });
+      } else {
+        res.status(401).json({ message: 'Not authorized!' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: "Couldn't udpate log!"
+      });
+    });
 };
 
 exports.getLogs = (req, res, next) => {
@@ -52,22 +69,43 @@ exports.getLogs = (req, res, next) => {
         logs: fetchedLogs,
         maxLogs: count
       });
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: 'Fetching posts failed!'
+      });
     });
 };
 
 exports.getLog = (req, res, next) => {
-  Log.findById(req.params.id).then(log => {
-    if (log) {
-      res.status(200).json(log);
-    } else {
-      res.status(404).json({ message: 'Log not found!' });
-    }
-  });
+  Log.findById(req.params.id)
+    .then(log => {
+      if (log) {
+        res.status(200).json(log);
+      } else {
+        res.status(404).json({ message: 'Log not found!' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: 'Fetching log failed!'
+      });
+    });
 };
 
 exports.deleteLog = (req, res, next) => {
-  Log.deleteOne({ _id: req.params.id }).then(result => {
-    console.log(result);
-    res.status(200).json({ message: 'Log deleted!' });
-  });
+  Log.deleteOne({ _id: req.params.id, creator: req.userData.userId })
+    .then(result => {
+      console.log(result);
+      if (result.n > 0) {
+        res.status(200).json({ message: 'Deletion successful!' });
+      } else {
+        res.status(401).json({ message: 'Not authorized!' });
+      }
+    })
+    .catch(error => {
+      res.status(500).json({
+        message: 'Deleting log failed!'
+      });
+    });
 };
