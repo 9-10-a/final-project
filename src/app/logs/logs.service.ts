@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 
 import { Log } from './logs.model';
+import { log } from 'util';
 const BACKEND_URL = environment.apiUrl + '/logs/';
 
 @Injectable({ providedIn: 'root' })
@@ -25,6 +26,7 @@ export class LogsService {
       .pipe(
         map(logData => {
           return {
+            // tslint:disable-next-line:no-shadowed-variable
             logs: logData.logs.map(log => {
               return {
                 id: log._id,
@@ -65,6 +67,7 @@ export class LogsService {
 
   // add new log
   addLog(date: string, content: string, duration: string, creator: string) {
+    // tslint:disable-next-line:no-shadowed-variable
     const log: Log = {
       id: null,
       date: date,
@@ -88,6 +91,7 @@ export class LogsService {
     duration: string,
     creator: string
   ) {
+    // tslint:disable-next-line:no-shadowed-variable
     const log: Log = {
       id: id,
       date: date,

@@ -46,10 +46,7 @@ const benchmarksRoutes = require('./routes/benchmarks');
 app.use('/api/logs', logsRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/benchmarks', benchmarksRoutes);
-
-// var distDir = __dirname + '/dist/group-project/';
-// app.use(express.static(distDir));
-
+// ng build for backend
 app.use('/', express.static(path.join(__dirname, 'angular')));
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, 'angular', 'index.html'));
