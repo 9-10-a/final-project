@@ -1,4 +1,4 @@
- import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
  // import ng2-simple-timer as SimpleTimer
 import { SimpleTimer } from 'ng2-simple-timer';

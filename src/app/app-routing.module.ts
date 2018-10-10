@@ -29,6 +29,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: 'timer', component: TimerComponent },
   {
     path: 'edit/:logId',
     component: LogCreateComponent,

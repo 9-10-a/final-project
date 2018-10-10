@@ -8,7 +8,6 @@ exports.createUser = (req, res, next) => {
     const user = new User({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
-      username: req.body.username,
       email: req.body.email,
       password: hash
     });

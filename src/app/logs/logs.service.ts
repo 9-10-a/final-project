@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 
 import { Log } from './logs.model';
+import { log } from 'util';
 const BACKEND_URL = environment.apiUrl + '/logs/';
 
 @Injectable({ providedIn: 'root' })
@@ -25,10 +26,12 @@ export class LogsService {
       .pipe(
         map(logData => {
           return {
+            // tslint:disable-next-line:no-shadowed-variable
             logs: logData.logs.map(log => {
               return {
                 id: log._id,
                 date: log.date,
+                title: log.title,
                 content: log.content,
                 duration: log.duration,
                 creator: log.creator
@@ -57,6 +60,7 @@ export class LogsService {
     return this.http.get<{
       _id: string;
       date: string;
+      title: string;
       content: string;
       duration: string;
       creator: string;
@@ -64,10 +68,11 @@ export class LogsService {
   }
 
   // add new log
-  addLog(date: string, content: string, duration: string, creator: string) {
+  addLog(date: string, title: string, content: string, duration: string, creator: string) {
     const log: Log = {
       id: null,
       date: date,
+      title: title,
       content: content,
       duration: duration,
       creator: creator
@@ -84,13 +89,16 @@ export class LogsService {
   updateLog(
     id: string,
     date: string,
+    title: string,
     content: string,
     duration: string,
     creator: string
   ) {
+    // tslint:disable-next-line:no-shadowed-variable
     const log: Log = {
       id: id,
       date: date,
+      title: title,
       content: content,
       duration: duration,
       creator: creator

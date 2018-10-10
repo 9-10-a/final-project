@@ -13,7 +13,6 @@ import { AngularMaterialModule } from './angular-material.module';
 import { LogsModule } from './logs/logs.module';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
-import { AboutComponent } from './about/about.component';
 import { TimerComponent } from './timer/timer.component';
 import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
 import { BenchmarkListComponent } from './benchmarks/benchmark-list/benchmark-list.component';
