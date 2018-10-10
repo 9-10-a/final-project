@@ -11,7 +11,8 @@ mat-spinner {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url('./../../../assets/images/login.jpg') no-repeat center top;
+  background: url('https://photos.app.goo.gl/N62GGZ7YMj5pec2b9') no-repeat
+    center top;
   background-size: cover;
   content: '';
   z-index: 0;

@@ -16,7 +16,8 @@ button {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url('./../../../assets/images/log.jpg') no-repeat center top;
+  background: url('https://photos.app.goo.gl/Pbp5fgcCKReUJGSA8') no-repeat
+    center top;
   background-size: cover;
   content: '';
   z-index: 0;
