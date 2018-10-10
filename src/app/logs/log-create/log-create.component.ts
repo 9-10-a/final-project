@@ -14,6 +14,7 @@ import { AuthService } from '../../users/auth.service';
 })
 export class LogCreateComponent implements OnInit, OnDestroy {
   enteredDate = '';
+  enteredTitle = '';
   enteredContent = '';
   enteredDuration = '';
   log: Log;
@@ -44,6 +45,7 @@ export class LogCreateComponent implements OnInit, OnDestroy {
           this.log = {
             id: logData._id,
             date: logData.date,
+            title: logData.title,
             content: logData.content,
             duration: logData.duration,
             creator: logData.creator
@@ -65,6 +67,7 @@ export class LogCreateComponent implements OnInit, OnDestroy {
     if (this.mode === 'create') {
       this.logsService.addLog(
         form.value.date,
+        form.value.title,
         form.value.content,
         form.value.duration,
         form.value.creator
@@ -73,6 +76,7 @@ export class LogCreateComponent implements OnInit, OnDestroy {
       this.logsService.updateLog(
         this.logId,
         form.value.date,
+        form.value.title,
         form.value.content,
         form.value.duration,
         form.value.creator

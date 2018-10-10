@@ -8,6 +8,10 @@
       <mat-datepicker #picker></mat-datepicker>
       <mat-error *ngIf="date.invalid">Please Select A Date</mat-error>
     </mat-form-field>
+    <!--  input for title -->
+    <mat-form-field>
+        <input matInput name="title" [ngModel]="log?.title" placeholder="Title" />
+      </mat-form-field>
     <!-- textarea for main content -->
     <mat-form-field>
       <textarea matInput rows="4" name="content" [ngModel]="log?.content" required placeholder="Log Your Workout Here"
