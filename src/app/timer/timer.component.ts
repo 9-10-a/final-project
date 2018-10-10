@@ -8,7 +8,7 @@ import { SimpleTimer } from 'ng2-simple-timer';
   selector: 'app-timer',
   template: `
   <h3>{{title}}</h3>
-  <div><button (click)="StartTimer0()">{{timer0button}} Time</button>{{counter0}}</div>
+  <div><button (click)="subscribeTimer0()">{{timer0button}} Time</button>{{counter0}}</div>
   <div><button (click)="delAllTimer()">Stop</button></div>`
  })
 
@@ -93,6 +93,7 @@ export class TimerComponent implements OnInit {
     }
     console.log(this.st.getSubscription());
   }
+
   timer0callback(): void {
     this.counter0++;
   }

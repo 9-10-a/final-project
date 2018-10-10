@@ -20,7 +20,7 @@ mat-spinner {
 }
 mat-card {
   margin: auto;
-  bottom: 10em;
+  /*bottom: 10em;*/
   background-color: rgba(255, 255, 255, 0.849);
   /* width: 50%; */
 }
