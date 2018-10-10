@@ -7,7 +7,7 @@ import { LogCreateComponent } from './logs/log-create/log-create.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
-// import { TimerComponent } from './timer/timer.component';
+import { TimerComponent } from './timer/timer.component';
 import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
 import { TechniquesComponent } from './techniques/techniques.component';
 
@@ -22,6 +22,10 @@ const routes: Routes = [
   {
     path: 'techniques',
     component: TechniquesComponent,
+    canActivate: [AuthGuard]
+  },
+  { path: 'timer',
+    component: TimerComponent,
     canActivate: [AuthGuard]
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
