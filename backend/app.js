@@ -22,7 +22,6 @@ mongoose
 // Parsing json data
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use('/', express.static(path.join(__dirname, 'angular')));
 
 // Set Headers
 app.use((req, res, next) => {
@@ -41,14 +40,17 @@ app.use((req, res, next) => {
 // importing routes
 const logsRoutes = require('./routes/logs');
 const userRoutes = require('./routes/user');
+const benchmarksRoutes = require('./routes/benchmarks');
 
 // Path
 app.use('/api/logs', logsRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/benchmarks', benchmarksRoutes);
 
-var distDir = __dirname + '/dist/group-project/';
-app.use(express.static(distDir));
+// var distDir = __dirname + '/dist/group-project/';
+// app.use(express.static(distDir));
 
+app.use('/', express.static(path.join(__dirname, 'angular')));
 app.use((req, res, next) => {
   res.sendFile(path.join(__dirname, 'angular', 'index.html'));
 });

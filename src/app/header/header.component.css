@@ -1,6 +1,9 @@
 mat-toolbar {
   padding: 40px;
 }
+img {
+  max-width: 2.5em;
+}
 
 /*
 .box {

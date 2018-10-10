@@ -15,9 +15,16 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { ProfileComponent } from './profile/profile.component';
 
 import { AboutComponent } from './about/about.component';
+<<<<<<< HEAD
 import { TimerComponent } from './timer/timer.component';
 import { SimpleTimer } from 'ng2-simple-timer';
 
+=======
+import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
+import { BenchmarkListComponent } from './benchmarks/benchmark-list/benchmark-list.component';
+import { TechniquesComponent } from './techniques/techniques.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+>>>>>>> df0780096c025c816e085cb4066d7cbcacdc20c9
 
 @NgModule({
   declarations: [
@@ -27,8 +34,15 @@ import { SimpleTimer } from 'ng2-simple-timer';
     HomepageComponent,
     TimerComponent,
     ProfileComponent,
+<<<<<<< HEAD
     AboutComponent    
     
+=======
+    AboutComponent,
+    BenchmarkCreateComponent,
+    BenchmarkListComponent,
+    TechniquesComponent
+>>>>>>> df0780096c025c816e085cb4066d7cbcacdc20c9
   ],
   imports: [
     BrowserModule,
@@ -36,9 +50,15 @@ import { SimpleTimer } from 'ng2-simple-timer';
     BrowserAnimationsModule,
     AngularMaterialModule,
     HttpClientModule,
+<<<<<<< HEAD
     LogsModule
      
     
+=======
+    LogsModule,
+    FormsModule,
+    ReactiveFormsModule
+>>>>>>> df0780096c025c816e085cb4066d7cbcacdc20c9
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

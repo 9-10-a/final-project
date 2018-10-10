@@ -1,25 +1,40 @@
-
-
-  
 <mat-card>
-    <mat-card-title>Profile Page</mat-card-title>
-  <title>Profile Page</title>
- 
- <input type="text" placeholder="UserName">
-  <br>
-<input type="text" placeholder="firstName, lastName">
-  <br>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Profile needs to be in the left -->
+      <div class="profile col-md-5">
+        <mat-card-title>Profile Page</mat-card-title>
+        <title>Profile Page</title>
 
-  <img class="img-responsive" src='assets/images/athlete2.gif'>
+        <input type="text" placeholder="UserName">
+        <br>
+        <input type="text" placeholder="firstName, lastName">
+        <br>
 
-<br>
-  <textarea name="Bio" id="Me" cols="30" rows="10" >Bio</textarea>
-  <br>
-  
- <button mat-raised-button>Edit
-   
- </button> 
- 
- </mat-card>
- 
- 
+        <img class="img-responsive" src='assets/images/athlete2.gif'>
+
+        <br>
+        <textarea name="Bio" id="Me" cols="30" rows="10">Bio</textarea>
+        <br>
+
+        <button mat-raised-button>Edit
+
+        </button>
+      </div>
+      <!-- Benchmark list to the right of profile component -->
+      <div class="benchmarks col-md-7">
+        <h2>Benchmarks</h2>
+        <app-benchmark-list></app-benchmark-list>
+      </div>
+    </div>
+  </div>
+</mat-card>
+<!-- Log list needs to take full width -->
+<!-- containter fluid used to fill up width -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="logs col-md-12">
+      <app-log-list></app-log-list>
+    </div>
+  </div>
+</div>
