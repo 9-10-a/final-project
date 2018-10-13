@@ -1,0 +1,39 @@
+<mat-card>
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Profile needs to be in the left -->
+      <!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
+      <div *ngFor="let profile of profiles">
+        <h1>{{profile.firstName}} {{ profile.lastName }}</h1>
+        <p>{{ profile.motivation }}</p>
+        <p *ngIf="profile.motivation === null">
+          Good Things Come to Those Who Sweat!
+        </p>
+        <!-- protect users profiles if not authenticated cannot edit or delete a profile -->
+        <mat-action-row *ngIf="userIsAuthenticated && userId === profile.creator">
+          <button mat-fab [routerLink]="['/edit-profile', profile.id]">Edit Profile</button>
+        </mat-action-row>
+
+      </div>
+      <!-- Benchmarks to the list -->
+      <div class="benchmarks col-md-7">
+        <h2>Benchmarks</h2>
+        <app-benchmark-list></app-benchmark-list>
+      </div>
+      <div *ngIf="profiles.length <= 0 && !isLoading">
+        Welcome to your SweatLog Profile!
+        In this area you can add your name and a motivational quote by clicking the add button.
+        <button mat-fab routerLink="/profile-edit">Add Profile</button>
+      </div>
+    </div>
+  </div>
+</mat-card>
+<!-- Log list needs to take full width
+containter fluid used to fill up width -->
+ <div class="container-fluid">
+  <div class="row">
+    <div class="logs col-md-12">
+      <app-log-list></app-log-list>
+    </div>
+  </div>
+</div> --> -->

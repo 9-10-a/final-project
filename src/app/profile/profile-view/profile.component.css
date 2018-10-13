@@ -1,0 +1,22 @@
+
+mat-card {
+  background-color: rgb(126, 117, 34);
+  height: 75vh;
+}
+button {
+  line-height: 5rem;
+  min-width: 0;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+}
+
+app-benchmark-list {
+  right: 0;
+}
+h2 {
+  text-align: center;
+}
+/* app-log-list {
+  margin-top: 5px;
+} */
