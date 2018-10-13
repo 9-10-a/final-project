@@ -12,12 +12,14 @@ import { ErrorComponent } from './error/error.component';
 import { AngularMaterialModule } from './angular-material.module';
 import { LogsModule } from './logs/logs.module';
 import { HomepageComponent } from './homepage/homepage.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './profile/profile-view/profile.component';
 import { TimerComponent } from './timer/timer.component';
 import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
 import { BenchmarkListComponent } from './benchmarks/benchmark-list/benchmark-list.component';
 import { TechniquesComponent } from './techniques/techniques.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
+import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AboutComponent,
     BenchmarkCreateComponent,
     BenchmarkListComponent,
-    TechniquesComponent
+    TechniquesComponent,
+    ProfileEditComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onSaveProfile(profileForm)" #profileForm="ngForm" *ngIf="!isLoading">
+      <!-- First Name  -->
+      <mat-form-field>
+        <input matInput name="firstName" [ngModel]="profile?.firstName" placeholder="First Name" />
+      </mat-form-field><br>
+      <!-- Last Name  -->
+      <mat-form-field>
+        <input matInput name="lastName" [ngModel]="profile?.lastName" placeholder="Last Name" />
+      </mat-form-field><br>
+      <!-- textarea for main content -->
+      <mat-form-field>
+        <textarea matInput rows="4" name="motivation" [ngModel]="profile?.motivation" placeholder="Good Things Come to Those Who Sweat!"
+          #content="ngModel"></textarea>
+        <!-- <mat-error *ngIf="motivation.invalid">Tell us where all that sweat came from.</mat-error> -->
+      </mat-form-field><br>
+      <!-- Submit button -->
+      <button mat-raised-button color="accent" type="submit"> Save </button>
+      <a mat-raised-button routerLink="/profile">Cancel</a>
+    </form>
+  </mat-card>
