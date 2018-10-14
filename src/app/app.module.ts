@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -20,6 +21,7 @@ import { TechniquesComponent } from './techniques/techniques.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import { ProfileEditComponent } from './profile/profile-edit/profile-edit.compon
     BenchmarkCreateComponent,
     BenchmarkListComponent,
     TechniquesComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +46,10 @@ import { ProfileEditComponent } from './profile/profile-edit/profile-edit.compon
     HttpClientModule,
     LogsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCR6A98I0bE8U9YEyMgetFaHAIuqBLQme0'
+    })
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

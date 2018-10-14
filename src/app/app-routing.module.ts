@@ -11,6 +11,7 @@ import { TimerComponent } from './timer/timer.component';
 import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
 import { TechniquesComponent } from './techniques/techniques.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -33,6 +34,11 @@ const routes: Routes = [
   {
     path: 'timer',
     component: TimerComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'map',
+    component: MapComponent,
     canActivate: [AuthGuard]
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
