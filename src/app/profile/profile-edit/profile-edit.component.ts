@@ -13,8 +13,7 @@ import { AuthService } from '../../users/auth.service';
   styleUrls: ['./profile-edit.component.css']
 })
 export class ProfileEditComponent implements OnInit, OnDestroy {
-  enteredFirstName = '';
-  enteredLastName = '';
+  enteredDisplayName = '';
   enteredMotivation = '';
   profile: Profile;
   isLoading = false;
@@ -45,8 +44,8 @@ export class ProfileEditComponent implements OnInit, OnDestroy {
             this.isLoading = false;
             this.profile = {
               id: profileData._id,
-              firstName: profileData.firstName,
-              lastName: profileData.lastName,
+              avatar: profileData.avatar,
+              displayName: profileData.displayName,
               motivation: profileData.motivation,
               creator: profileData.creator
             };
@@ -66,16 +65,16 @@ export class ProfileEditComponent implements OnInit, OnDestroy {
     this.isLoading = true;
     if (this.mode === 'create') {
       this.profilesService.addProfile(
-        form.value.firstName,
-        form.value.lastName,
+        form.value.avatar,
+        form.value.displayName,
         form.value.motivation,
         form.value.creator
       );
     } else {
       this.profilesService.updateProfile(
         this.profileId,
-        form.value.firstName,
-        form.value.lastName,
+        form.value.avatar,
+        form.value.displayName,
         form.value.motivation,
         form.value.creator
       );

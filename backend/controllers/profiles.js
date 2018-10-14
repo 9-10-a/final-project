@@ -3,8 +3,8 @@ const sort = { date: -1 };
 
 exports.createProfile = (req, res, next) => {
   const profile = new Profile({
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
+    avatar: req.body.avatar,
+    displayName: req.body.displayName,
     motivation: req.body.motivation,
     creator: req.userData.userId
   });
@@ -27,8 +27,8 @@ exports.createProfile = (req, res, next) => {
 exports.updateProfile = (req, res, next) => {
   const profile = new Profile({
     _id: req.body.id,
-    firstName: req.body.firstName,
-    lastName: req.body.lastName,
+    avatar: req.body.avatar,
+    displayName: req.body.displayName,
     motivation: req.body.motivation,
     creator: req.userData.userId
   });
@@ -53,8 +53,7 @@ exports.getProfiles = (req, res, next) => {
     .then(documents => {
       res.status(200).json({
         message: 'Profiles fetched successfully!',
-        profiles: documents,
-       
+        profiles: documents
       });
     })
     .catch(error => {

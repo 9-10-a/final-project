@@ -33,9 +33,9 @@ export class AuthService {
     return this.authStatusListener.asObservable();
   }
 
-  createUser(firstName: string, lastName: string, email: string, password: string) {
-    const authData: AuthData = { firstName: firstName, lastName: lastName, email: email, password: password };
-    this.http.post(BACKEND_URL + '/signup', authData ).subscribe(
+  createUser(email: string, password: string) {
+    const authData: AuthData = { email: email, password: password };
+    this.http.post(BACKEND_URL + '/signup', authData).subscribe(
       () => {
         this.router.navigate(['auth/login']);
       },
@@ -45,8 +45,8 @@ export class AuthService {
     );
   }
 
-  login( email: string, password: string) {
-    const authData: AuthData = { firstName: '', lastName: '', email: email, password: password };
+  login(email: string, password: string) {
+    const authData: AuthData = { email: email, password: password };
     this.http
       .post<{ token: string; expiresIn: number; userId: string }>(
         BACKEND_URL + '/login',
