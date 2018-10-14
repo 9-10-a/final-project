@@ -1,7 +1,7 @@
 export interface Profile {
-    id: string;
-    firstName: string;
-    lastName: string;
-    motivation: string;
-    creator: string;
-  }
+  id: string;
+  avatar: string;
+  displayName: string;
+  motivation: string;
+  creator: string;
+}

@@ -24,8 +24,8 @@ export class ProfilesService {
           return profileData.profiles.map(profile => {
             return {
               id: profile._id,
-              firstName: profile.firstName,
-              lastName: profile.lastName,
+              avatar: profile.avatar,
+              displayName: profile.displayName,
               motivation: profile.motivation,
               creator: profile.creator
             };
@@ -47,8 +47,8 @@ export class ProfilesService {
   getProfile(id: string) {
     return this.http.get<{
       _id: string;
-      firstName: string;
-      lastName: string;
+      avatar: string;
+      displayName: string;
       motivation: string;
       creator: string;
     }>(BACKEND_URL + id);
@@ -56,15 +56,15 @@ export class ProfilesService {
 
   // add new profile
   addProfile(
-    firstName: string,
-    lastName: string,
+    avatar: string,
+    displayName: string,
     motivation: string,
     creator: string
   ) {
     const profile: Profile = {
       id: null,
-      firstName: firstName,
-      lastName: lastName,
+      avatar: avatar,
+      displayName: displayName,
       motivation: motivation,
       creator: creator
     };
@@ -79,16 +79,16 @@ export class ProfilesService {
   // update specific profile by id
   updateProfile(
     id: string,
-    firstName: string,
-    lastName: string,
+    avatar: string,
+    displayName: string,
     motivation: string,
     creator: string
   ) {
     // tslint:disable-next-line:no-shadowed-variable
     const profile: Profile = {
       id: id,
-      firstName: firstName,
-      lastName: lastName,
+      avatar: avatar,
+      displayName: displayName,
       motivation: motivation,
       creator: creator
     };
