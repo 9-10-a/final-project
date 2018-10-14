@@ -8,6 +8,7 @@ img {
 }
 .profile {
   margin-top: 2px;
+  z-index: -1;
 }
 img {
   margin-top: 5px;
@@ -17,11 +18,12 @@ app-benchmark-list {
 }
 mat-card {
   min-height: 89px;
+
 }
 
 .background {
   position: absolute;
-  top: 5em;
+  top: 55px;
   left: 0;
   bottom: 0;
   right: 0;
@@ -29,7 +31,7 @@ mat-card {
     no-repeat center top;
   background-size: cover;
   content: '';
-  z-index: 0;
+  z-index: -1;
   display: grid;
 }
 
