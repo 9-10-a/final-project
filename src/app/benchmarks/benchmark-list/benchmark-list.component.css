@@ -2,15 +2,15 @@
   display: block;
   margin-top: 1rem;
 }
-mat-card {
+.benchmarks {
   color: inherit;
   width: 50%;
 }
-mat-card:nth-child(odd) {
+.benchmarks:nth-child(odd) {
   float: right;
   right: 0;
 }
-mat-card:nth-child(even) {
+.benchmarks:nth-child(even) {
   float: left;
   left: 0;
 }
@@ -29,7 +29,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+p {
+  font-weight: 800;
+}
 /*
 .header {
   position: absolute;

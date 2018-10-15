@@ -1,43 +1,40 @@
+a {
+  margin: 2px;
+}
 img {
   width: 230px;
   height: 230px;
   border: 1px solid rgba(0, 0, 0, 0.11);
+  margin-top: 5px;
 }
 .text-box {
   width: 230px;
+  min-height: 89px;
 }
 .profile {
   margin-top: 2px;
-  z-index: -1;
-}
-img {
-  margin-top: 5px;
+  z-index: 0;
 }
 app-benchmark-list {
   right: 0;
 }
-mat-card {
-  min-height: 89px;
-
-}
-
 .background {
   position: absolute;
   top: 55px;
   left: 0;
   bottom: 0;
   right: 0;
-  background: url('/../assets/images/swim2.jpg')
-    no-repeat center top;
+  background: url('/../assets/images/swim2.jpg') no-repeat center top;
+  opacity: 0.75;
   background-size: cover;
   content: '';
   z-index: -1;
   display: grid;
 }
 
-.welcome {
+/* .welcome {
   background-color: rgba(255, 255, 255, 0.849);
   width: 75%;
   top: 10em;
   margin: auto;
-}
+} */
