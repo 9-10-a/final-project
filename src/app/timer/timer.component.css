@@ -2,4 +2,50 @@
     height: 100%;
     display: grid;
 }
-   */
+   */ 
+  
+    mat-card{
+     position: absolute;
+     top: 5em;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     background: url('https://lh3.googleusercontent.com/QMiAppFFVCQNHA13ZOWG04AWfxuRXfP8dJEmPQI-OEF679lp0mi0KpouwxKyv5oZ6J7ku2J4Jx1st4W-GglV6vCAGRz8j17KE95e6ZVxaXpxl2L8wP_geGxkj3SEm7YV57YIJ5cZmw=w2400')
+    no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: 0;
+  display: grid;
+      }
+
+      .body{
+         opacity: 0.0;
+
+          filter: alpha(opacity=30); /* For IE8 and earlier */
+          ;
+          width: 85%;
+          top: 10em;
+          margin: auto;
+          height: flex;
+      }
+
+  button {
+
+    text-align: center;
+    height: 100px;
+    width:300px;
+    margin: auto;
+   
+    background-color: rgb(245, 22, 22);
+    color: black;
+    padding: 25px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 35px;
+    
+}
+
+
+
+ 
+

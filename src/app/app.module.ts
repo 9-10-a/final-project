@@ -18,6 +18,7 @@ import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmar
 import { BenchmarkListComponent } from './benchmarks/benchmark-list/benchmark-list.component';
 import { TechniquesComponent } from './techniques/techniques.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
