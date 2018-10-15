@@ -39,11 +39,23 @@ export class MapComponent {
       draggable: false,
     },
     {
+      lat: 40.5371596,
+      lng: -122.3476851,
+      name: 'Anytime Fitness',
+      draggable: false,
+    },
+    {
       lat: 40.5672764,
       lng: -122.362331,
-      name: 'GCD Fitness',
+      name: 'CrossFit Redding',
       draggable: false,
-    }
+    },
+    {
+      lat: 40.5769914,
+      lng: -122.3749163,
+      name: 'Everday Fitness and Training',
+      draggable: false,
+    },
   ];
   // initial position for map - Redding, California
   lat = 40.583333;
@@ -51,10 +63,7 @@ export class MapComponent {
   // google maps zoom level
   zoom = 13;
 
-  /*onLocation(event) {
-    this.latitude = event.coords.lat;
-    this.longitude = event.coords.lng;
-  }*/
+
 
   clickedMarker(label: string, index: number) {
     console.log(`clicked the marker: ${label || index}`);
@@ -74,11 +83,16 @@ interface Marker {
 }
 
 
-/*mapClicked($event: MouseEvent) {
-    this.markers.push({
-      lat: $event.coords.lat,
-      lng: $event.coords.lng,
-      draggable: false,
-    });
+
+/*onLocation(event) {
+    this.latitude = event.coords.lat;
+    this.longitude = event.coords.lng;
   }*/
 
+/*mapClicked($event: MouseEvent) {
+      this.markers.push({
+        lat: $event.coords.lat,
+        lng: $event.coords.lng,
+        draggable: false,
+      });
+*/

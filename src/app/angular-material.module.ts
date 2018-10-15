@@ -14,7 +14,7 @@ import {
   MatCheckboxModule,
   MatGridListModule,
   MatSidenavModule,
-  MatTabsModule
+  MatTabsModule,
   // MatGridList
 } from '@angular/material';
 

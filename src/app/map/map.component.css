@@ -1,7 +1,16 @@
  agm-map {
-   height: 500px;
+  height: 550px;
+  width: 600px;
+  border: black;
 }
 
 label {
   font: bolder;
+}
+
+.addresses {
+  position: absolute;
+  height: 500px;
+  width: 600px;
+  right: 100px;
 }
