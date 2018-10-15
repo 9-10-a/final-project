@@ -13,6 +13,7 @@ import {
   MatSelectModule,
   MatCheckboxModule,
   MatGridListModule,
+  MatSidenavModule,
   MatTabsModule
   // MatGridList
 } from '@angular/material';
@@ -32,6 +33,7 @@ import {
     MatSelectModule,
     MatCheckboxModule,
     MatGridListModule,
+    MatSidenavModule,
     MatTabsModule
   ]
 })
