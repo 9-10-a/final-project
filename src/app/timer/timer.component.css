@@ -1,5 +1,35 @@
-/* :host {
-    height: 100%;
-    display: grid;
+mat-card {
+  position: absolute;
+  top: 5em;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&h=350')
+    no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: 0;
+  display: grid;
 }
-   */
+
+.body {
+  opacity: 0.8;
+  filter: alpha(opacity=30);
+  width: 85%;
+  top: 10em;
+  margin: auto;
+  height: flex;
+}
+
+button {
+  text-align: center;
+  height: 100px;
+  width: 300px;
+  margin: auto;
+  background-color: rgb(245, 22, 22);
+  color: black;
+  padding: 25px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 35px;
+}

@@ -22,6 +22,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
 import { MapComponent } from './map/map.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import {
+  MatToolbarModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatIconModule,
+  MatListModule
+} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -36,7 +45,8 @@ import { MapComponent } from './map/map.component';
     BenchmarkListComponent,
     TechniquesComponent,
     ProfileEditComponent,
-    MapComponent
+    MapComponent,
+    MainNavComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +59,13 @@ import { MapComponent } from './map/map.component';
     ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCR6A98I0bE8U9YEyMgetFaHAIuqBLQme0'
-    })
+    }),
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

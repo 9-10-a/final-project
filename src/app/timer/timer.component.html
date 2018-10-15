@@ -1,16 +1,21 @@
- <!-- <!doctype html>
-<html>
-	<div ng-controller="MyController">
-		<label name="text">Text goes here: </label>
-		<input type="text" ng-model="count" />
-		<button ng-click="cancelInterval()">Stop Timer</button>
-	  </div>
+<mat-card>
+
+  <div class="body">
+
+    <button (click)='startTimer()'>Start Timer</button> <br>
+    <p> {{timeMinutes}} : {{remainderSeconds}} TIME USED ..</p>
+    <button (click)='pauseTimer()'>Pause</button>
+    <br>
+    <br>
+    <div><button (click)="resetTimer()">Reset</button></div>
 
 
-<body>
-	<app-component>Loading...</app-component>
-</body>
 
-</html>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.11/angular.min.js"></script>
 
-<Timer-component></Timer-component> -->
+<div ng-app="myApp">
+  <div ng-controller='TimeCtrl'>
+    <p>{{ clock | date:'HH:mm:ss'}}</p>
+  </div> -->
+  </div>
+</mat-card>
