@@ -11,7 +11,7 @@
         <h1>{{ profile.displayName}}</h1>
         <img src="{{profile.avatar}}" alt="">
         <mat-card class="text-box">{{ profile.motivation }}</mat-card>
-        <a mat-button color="primary" [routerLink]="['/profile-edit', profile.id]">Edit Profile</a>
+        <a mat-raised-button color="primary" [routerLink]="['/edit-profile', profile.id]">Edit Profile</a>
       </div>
 
       <!-- shows if profile info is not updated -->
@@ -19,7 +19,14 @@
         <h1>Welcome to your SweatLog!</h1>
         <mat-card>Click below to update your profile and add a motovational quote are personal message to keep you
           sweating.</mat-card>
-        <a mat-button color="primary" routerLink="/profile-edit">Add Info</a>
+        <a mat-raised-button color="primary" routerLink="/profile-edit">Add Info</a>
+      </div>
+      <div>
+        <!-- <h1>Need something to go to logs <a >Click here for now</a></h1>
+        <p>Also need to decide when user logs in do they go to profile or go to logs</p> -->
+        <a mat-raised-button color='accent' routerLink="/create"> New Log </a>
+        &nbsp;
+        <a mat-raised-button color='accent' routerLink="/log"> View Your Logs Here </a>
       </div>
     </div>
 
@@ -31,24 +38,12 @@
   </div>
 </div>
 
-<br>
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
-    <div class="logs col-12">
-      <!-- <h1>Need something to go to logs <a >Click here for now</a></h1>
-      <p>Also need to decide when user logs in do they go to profile or go to logs</p> -->
+    <div>
       <a mat-raised-button color='accent' routerLink="/create"> New Log </a>
       &nbsp;
       <a mat-raised-button color='accent' routerLink="/log"> View Your Logs Here </a>
-    </div>
-  </div>
-</div>
-  <!-- Log list needs to take full width
-containter fluid used to fill up width -->
-  <!-- <div class="container-fluid">
-  <div class="row">
-    <div class="logs col-md-12">
-      <app-log-list></app-log-list>
     </div>
   </div>
 </div> -->
