@@ -36,6 +36,11 @@
     </li>
   </ul>
   <ul>
+      <li *ngIf="userIsAuthenticated">
+        <a mat-button routerLink="/map" routerLinkActive="mat-accent">Find a Gym</a>
+      </li>
+    </ul>
+  <ul>
     <li *ngIf="userIsAuthenticated">
       <a mat-button routerLink="/timer" routerLinkActive="mat-accent">Timer</a>
     </li>

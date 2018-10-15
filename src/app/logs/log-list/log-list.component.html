@@ -15,7 +15,7 @@
     </div>
     <!-- protect users logs if not authenticated cannot edit or delete a log -->
     <mat-action-row *ngIf="userIsAuthenticated && userId === log.creator">
-      <a mat-button color="primary" [routerLink]="['/edit', log.id]">EDIT</a>
+      <a mat-button color="primary" [routerLink]="['/edit-log', log.id]">EDIT</a>
       <button mat-button color="warn" (click)="onDelete(log.id)">DELETE</button>
     </mat-action-row>
   </mat-expansion-panel>

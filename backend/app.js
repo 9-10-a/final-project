@@ -41,11 +41,13 @@ app.use((req, res, next) => {
 const logsRoutes = require('./routes/logs');
 const userRoutes = require('./routes/user');
 const benchmarksRoutes = require('./routes/benchmarks');
+const profilesRoutes = require('./routes/profiles');
 
 // Path
 app.use('/api/logs', logsRoutes);
 app.use('/api/user', userRoutes);
 app.use('/api/benchmarks', benchmarksRoutes);
+app.use('/api/profiles', profilesRoutes);
 // ng build for backend
 app.use('/', express.static(path.join(__dirname, 'angular')));
 app.use((req, res, next) => {

@@ -5,11 +5,13 @@ import { AuthGuard } from './users/auth.guard';
 import { LogListComponent } from './logs/log-list/log-list.component';
 import { LogCreateComponent } from './logs/log-create/log-create.component';
 import { HomepageComponent } from './homepage/homepage.component';
-import { ProfileComponent } from './profile/profile.component';
+import { ProfileComponent } from './profile/profile-view/profile.component';
 import { AboutComponent } from './about/about.component';
 import { TimerComponent } from './timer/timer.component';
 import { BenchmarkCreateComponent } from './benchmarks/benchmark-create/benchmark-create.component';
 import { TechniquesComponent } from './techniques/techniques.component';
+import { ProfileEditComponent } from './profile/profile-edit/profile-edit.component';
+import { MapComponent } from './map/map.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -20,18 +22,34 @@ const routes: Routes = [
   { path: 'profile/benchmarkcreate', component: BenchmarkCreateComponent },
   { path: 'create', component: LogCreateComponent, canActivate: [AuthGuard] },
   {
+    path: 'profile-edit',
+    component: ProfileEditComponent,
+    canActivate: [AuthGuard]
+  },
+  {
     path: 'techniques',
     component: TechniquesComponent,
     canActivate: [AuthGuard]
   },
-  { path: 'timer',
+  {
+    path: 'timer',
     component: TimerComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'map',
+    component: MapComponent,
     canActivate: [AuthGuard]
   },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: 'timer', component: TimerComponent },
   {
-    path: 'edit/:logId',
+    path: 'edit-profile/:profileId',
+    component: ProfileEditComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'edit-log/:logId',
     component: LogCreateComponent,
     canActivate: [AuthGuard]
   },
