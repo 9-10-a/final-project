@@ -18,3 +18,7 @@ mat-card {
   z-index: -1;
   display: grid;
 }
+
+a {
+  margin: 5px;
+}
