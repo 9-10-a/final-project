@@ -1,17 +1,15 @@
 <div class="background">
-
+  <mat-card class="timer">
+    <p *ngIf="remainderSeconds < 10">{{timeMinutes}}:0{{remainderSeconds}}</p>
+    <p *ngIf="remainderSeconds >= 10">{{timeMinutes}}:{{remainderSeconds}}</p>
+    <hr>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)='startTimer()'>Start</button>
+      <button mat-button color="accent" (click)='pauseTimer()'>Stop</button>
+      <button mat-button color="warn" (click)='resetTimer()'>Reset</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
-<mat-card class="timer">
-  <p *ngIf="remainderSeconds < 10">{{minutes}}:0{{remainderSeconds}}</p>
-  <p *ngIf="remainderSeconds >= 10">{{minutes}}:{{remainderSeconds}}</p>
-  <hr>
-  <mat-card-actions>
-    <button mat-button color="primary" (click)='startTimer()'>Start</button>
-    <button mat-button color="accent" (click)='pauseTimer()'>Stop</button>
-    <button mat-button color="warn" (click)='resetTimer()'>Reset</button>
-  </mat-card-actions>
-</mat-card>
-
 
 
 <!-- <mat-card>

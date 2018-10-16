@@ -3,19 +3,22 @@ button:focus {
 }
 mat-card {
   text-align: center;
-  min-width: 400px;
+  width: 75%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.849);
 }
 p {
-  font-size: 10em;
+  font-size: 10rem;
   color: black;
 }
 
-.timer {
+/* .timer {
   background-color: rgba(255, 255, 255, 0.849);
   max-width: 75%;
   top: 2em;
   margin: auto;
-}
+  same as mat-card
+} */
 
 .background {
   position: absolute;
@@ -23,12 +26,17 @@ p {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url('../../assets/images/swim2.jpg')
-    no-repeat center top;
+  background: url('../../assets/images/swim2.jpg') no-repeat center top;
   background-size: cover;
   content: '';
   z-index: -1;
   display: grid;
+}
+/* added so number fit in card on smaller screens */
+@media (max-width: 675px) {
+  p {
+    font-size: 5em;
+  }
 }
 
 /*mat-card {
@@ -66,5 +74,3 @@ button {
   text-decoration: none;
   font-size: 35px;
 }*/
-
-
