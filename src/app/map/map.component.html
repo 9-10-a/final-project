@@ -1,34 +1,23 @@
-<br>
 <div class="container-fluid">
   <div class="row">
-
     <!-- Map needs to be in the left -->
-    <div class="map col-sm-12 col-md-4 col-lg-4">
+    <div class="map col-sm-12 col-md-8 col-lg-8">
 
-      <agm-map
-        [latitude]="lat"
-        [longitude]="lng"
-        [zoom]="zoom"
-        [disableDefaultUI]="false"
-        [zoomControl]="true">
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="true">
 
-        <agm-marker
-          *ngFor="let m of markers; let i = index"
-          (markerClick)="clickedMarker(m, i)"
-          [latitude]="m.lat"
+        <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m, i)" [latitude]="m.lat"
           [longitude]="m.lng">
 
-            <agm-info-window>
-              <strong>{{m.name}}</strong>
-            </agm-info-window>
+          <agm-info-window>
+            <strong>{{m.name}}</strong>
+          </agm-info-window>
 
         </agm-marker>
 
       </agm-map>
     </div>
-
     <!-- Addresses of gyms on the right -->
-    <div class="addresses col-sm-10 col-md-6 col-lg-6">
+    <div class="addresses col-sm-12 col-md-4 col-lg-4">
       <mat-accordion>
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -48,7 +37,7 @@
               Anytime Fitness
             </mat-panel-title>
           </mat-expansion-panel-header>
-           3325-3331 Placer St. Redding CA 96001
+          3325-3331 Placer St. Redding CA 96001
           <br>
           +1 530-255-8087
           <br>
@@ -130,6 +119,3 @@
 
   </div>
 </div>
-
-
-

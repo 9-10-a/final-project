@@ -1,4 +1,20 @@
 mat-form-field {
-    width: 500px;
-  }
-  
+  width: 100%;
+}
+mat-card {
+  max-width: 75%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.849);
+}
+.background {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('/../assets/images/swim2.jpg') no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: -1;
+  display: grid;
+}

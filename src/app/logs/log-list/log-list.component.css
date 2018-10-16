@@ -10,3 +10,37 @@ mat-spinner {
 .info-text {
   text-align: center;
 }
+.background {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('https://lh3.googleusercontent.com/0VZDhngnLHiCLG6R8b2yiuzjmL2D4mYzyfs05abB9Tex-LCbfgkBjt5sQP-O8SgOvY9OQ7DIfpc20KvWPvGNw-_W8ZId5sKydsLMWvNhDhNroD2XQG5uqe6d4r0zddSJx3wFab0-hw=w2400')
+    no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: -1;
+  display: grid;
+}
+mat-card {
+  max-width: 75%;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.849);
+}
+
+mat-expansion-panel,
+mat-paginator {
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.849);
+}
+mat-accordion,
+mat-action-row,
+mat-expansion-panel-header {
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0);
+}
+.list {
+  width: 75%;
+  margin: auto;
+}

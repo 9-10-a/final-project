@@ -1,8 +1,8 @@
 const Benchmark = require('../models/benchmark');
-const sort = { date: -1 };
 
 exports.createBenchmark = (req, res, next) => {
   const benchmark = new Benchmark({
+    type: req.body.type,
     title: req.body.title,
     content: req.body.content,
     creator: req.userData.userId
@@ -26,6 +26,7 @@ exports.createBenchmark = (req, res, next) => {
 exports.updateBenchmark = (req, res, next) => {
   const benchmark = new Benchmark({
     _id: req.body.id,
+    type: req.body.type,
     title: req.body.title,
     content: req.body.content,
     creator: req.userData.userId

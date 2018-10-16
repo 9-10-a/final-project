@@ -25,6 +25,7 @@ export class BenchmarksService {
         map(benchmarkData => {
           return benchmarkData.benchmarks.map(benchmark => {
             return {
+              type: benchmark.type,
               title: benchmark.title,
               content: benchmark.content,
               id: benchmark._id
@@ -45,13 +46,21 @@ export class BenchmarksService {
 
   // gets the benchmark information for editing a post - loaded into the benchmark create
   getBenchmark(id: string) {
-    return this.http.get<{ _id: string; title: string; content: string }>(
-      BACKEND_URL + id
-    );
+    return this.http.get<{
+      _id: string;
+      type: string;
+      title: string;
+      content: string;
+    }>(BACKEND_URL + id);
   }
   // Creating a new benchmark
-  addBenchmark(title: string, content: string) {
-    const benchmark: Benchmark = { id: null, title: title, content: content };
+  addBenchmark(type: string, title: string, content: string) {
+    const benchmark: Benchmark = {
+      id: null,
+      type: type,
+      title: title,
+      content: content
+    };
     this.http
       .post<{ message: string; benchmarkId: string }>(BACKEND_URL, benchmark)
       .subscribe(responseData => {
@@ -65,8 +74,13 @@ export class BenchmarksService {
   }
 
   // Edit a benchmark
-  updateBenchmark(id: string, title: string, content: string) {
-    const benchmark: Benchmark = { id: id, title: title, content: content };
+  updateBenchmark(id: string, type: string, title: string, content: string) {
+    const benchmark: Benchmark = {
+      id: id,
+      type: type,
+      title: title,
+      content: content
+    };
     this.http.put(BACKEND_URL + id, benchmark).subscribe(response => {
       const updatedBenchmarks = [...this.benchmarks];
       const oldBenchmarkIndex = updatedBenchmarks.findIndex(

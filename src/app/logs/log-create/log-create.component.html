@@ -4,26 +4,29 @@
     <form (submit)="onSaveLog(logForm)" #logForm="ngForm" *ngIf="!isLoading">
       <!-- datepicker  -->
       <mat-form-field class="date">
-        <input matInput name="date" [matDatepicker]="picker" placeholder="Select Date" [ngModel]="log?.date" #date="ngModel">
+        <input matInput name="date" [matDatepicker]="picker" required placeholder="Select Date" [ngModel]="log?.date"
+          #date="ngModel">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
         <mat-error *ngIf="date.invalid">Please Select A Date</mat-error>
       </mat-form-field>
-      <mat-form-field>
-        <input matInput name="title" [ngModel]="log?.title" placeholder="Title" />
+      <mat-form-field class="title">
+        <input matInput name="title" [ngModel]="log?.title" placeholder="Title (optional)" />
       </mat-form-field>
       <!-- textarea for main content -->
-      <mat-form-field>
-        <textarea matInput rows="4" name="content" [ngModel]="log?.content" required placeholder="Log Your Workout Here"
+      <mat-form-field class="content">
+        <textarea matInput rows="2" name="content" [ngModel]="log?.content" required placeholder="Log Your Workout Here"
           #content="ngModel"></textarea>
         <mat-error *ngIf="content.invalid">Tell us where all that sweat came from.</mat-error>
       </mat-form-field>
-      <mat-form-field>
-        <input matInput name="duration" [ngModel]="log?.duration" placeholder="Duration" />
+      <mat-form-field class="duration">
+        <input matInput name="duration" [ngModel]="log?.duration" placeholder="Duration (optional)" />
       </mat-form-field>
       <!-- Submit button -->
-      <button mat-raised-button color="accent" type="submit"> Save </button>
-      <a mat-raised-button routerLink="/log">Cancel</a>
+      <!-- <mat-action-row> -->
+      <button mat-raised-button color="accent" type="submit">Save</button>
+      <button mat-raised-button routerLink="/log">Cancel</button>
+      <!-- </mat-action-row> -->
     </form>
   </mat-card>
 </div>
