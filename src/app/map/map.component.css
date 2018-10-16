@@ -1,6 +1,6 @@
- agm-map {
-  height: 550px;
-  width: 600px;
+agm-map {
+  height: 500px;
+  width: 500px;
   border: black;
 }
 
@@ -9,8 +9,13 @@ label {
 }
 
 .addresses {
-  position: absolute;
-  height: 500px;
-  width: 600px;
-  right: 100px;
+  /* position: absolute; */
+  width: 100%;
+  right: 0;
+}
+@media (max-width: 815px) {
+  agm-map {
+    height: 450px;
+    width: 450px;
+  }
 }

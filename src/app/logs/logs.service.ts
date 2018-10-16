@@ -6,7 +6,7 @@ import { Router } from '@angular/router';
 import { environment } from '../../environments/environment';
 
 import { Log } from './logs.model';
-import { log } from 'util';
+
 const BACKEND_URL = environment.apiUrl + '/logs/';
 
 @Injectable({ providedIn: 'root' })
@@ -68,7 +68,13 @@ export class LogsService {
   }
 
   // add new log
-  addLog(date: string, title: string, content: string, duration: string, creator: string) {
+  addLog(
+    date: string,
+    title: string,
+    content: string,
+    duration: string,
+    creator: string
+  ) {
     const log: Log = {
       id: null,
       date: date,
@@ -105,7 +111,7 @@ export class LogsService {
     };
     this.http.put(BACKEND_URL + id, log).subscribe(response => {
       // routing after a log is saved - Service needs router module for this
-      this.router.navigate(['/profile']);
+      this.router.navigate(['/log']);
     });
   }
 

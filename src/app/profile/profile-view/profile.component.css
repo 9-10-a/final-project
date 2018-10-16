@@ -5,11 +5,16 @@ img {
   width: 230px;
   height: 230px;
   border: 1px solid rgba(0, 0, 0, 0.11);
-  margin-top: 5px;
+  margin-top: 13px;
+}
+.welcome {
+  margin-top: 13px;
+  background-color: rgba(255, 255, 255, 0.849);
 }
 .text-box {
   width: 230px;
   min-height: 89px;
+  background-color: rgba(255, 255, 255, 0.849);
 }
 .profile {
   margin-top: 2px;
@@ -25,16 +30,8 @@ app-benchmark-list {
   bottom: 0;
   right: 0;
   background: url('/../assets/images/swim2.jpg') no-repeat center top;
-  opacity: 0.75;
   background-size: cover;
   content: '';
   z-index: -1;
   display: grid;
 }
-
-/* .welcome {
-  background-color: rgba(255, 255, 255, 0.849);
-  width: 75%;
-  top: 10em;
-  margin: auto;
-} */

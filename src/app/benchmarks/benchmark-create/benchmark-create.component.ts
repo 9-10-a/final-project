@@ -11,6 +11,7 @@ import { Benchmark } from '../benchmark.model';
   styleUrls: ['./benchmark-create.component.css']
 })
 export class BenchmarkCreateComponent implements OnInit {
+  enteredType = '';
   enteredTitle = '';
   enteredContent = '';
   benchmark: Benchmark;
@@ -36,6 +37,7 @@ export class BenchmarkCreateComponent implements OnInit {
             this.isLoading = false;
             this.benchmark = {
               id: benchmarkData._id,
+              type: benchmarkData.type,
               title: benchmarkData.title,
               content: benchmarkData.content
             };
@@ -54,10 +56,15 @@ export class BenchmarkCreateComponent implements OnInit {
     }
     this.isLoading = true;
     if (this.mode === 'create') {
-      this.benchmarksService.addBenchmark(form.value.title, form.value.content);
+      this.benchmarksService.addBenchmark(
+        form.value.type,
+        form.value.title,
+        form.value.content
+      );
     } else {
       this.benchmarksService.updateBenchmark(
         this.benchmarkId,
+        form.value.type,
         form.value.title,
         form.value.content
       );
