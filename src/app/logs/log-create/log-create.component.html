@@ -1,6 +1,6 @@
 <div class="background">
   <!-- <br>  removed - caused mat-cards to sit at bottom of page instead of center-->
-  <mat-card>
+  <mat-card class="log-create-card">
     <mat-spinner *ngIf="isLoading"></mat-spinner>
     <form (submit)="onSaveLog(logForm)" #logForm="ngForm" *ngIf="!isLoading">
       <!-- datepicker  -->

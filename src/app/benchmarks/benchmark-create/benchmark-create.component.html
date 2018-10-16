@@ -1,6 +1,6 @@
 <div class="background">
   <!-- <br>  removed - caused mat-cards to sit at bottom of page instead of center-->
-  <mat-card>
+  <mat-card class="benchmark-card">
     <mat-spinner *ngIf="isLoading"></mat-spinner>
     <form (submit)="onSaveBenchmark(benchmarkForm)" #benchmarkForm="ngForm" *ngIf="!isLoading">
       <!-- Select Goal or Personal Record -->
