@@ -3,13 +3,13 @@
   margin-top: 2em;
 }
 .info-text {
-  z-index: -1;
+  /* z-index: -1;  Click to add button stops working */
   background-color: rgba(255, 255, 255, 0.849);
 }
 .benchmarks {
   color: inherit;
   width: 50%;
-  z-index: -1;
+  z-index: 0; /* changed from -1 to 0 to get same look if .info-text was -1 and click to add button works */
   background-color: rgba(255, 255, 255, 0.849);
 }
 .benchmarks:nth-child(odd) {
