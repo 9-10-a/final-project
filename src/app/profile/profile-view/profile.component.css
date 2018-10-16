@@ -17,8 +17,9 @@ img {
   background-color: rgba(255, 255, 255, 0.849);
 }
 .profile {
-  margin-top: 2px;
-  z-index: 0;
+  /*margin-top: 2px;*/
+  top: 2em;
+  z-index: -1;
 }
 app-benchmark-list {
   right: 0;
@@ -29,7 +30,7 @@ app-benchmark-list {
   left: 0;
   bottom: 0;
   right: 0;
-  background: url('/../assets/images/swim2.jpg') no-repeat center top;
+  background: url('/../assets/images/running.jpg') no-repeat center top;
   background-size: cover;
   content: '';
   z-index: -1;
