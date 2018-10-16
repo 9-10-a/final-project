@@ -9,6 +9,4 @@ export class TechniquesComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
 }
-
