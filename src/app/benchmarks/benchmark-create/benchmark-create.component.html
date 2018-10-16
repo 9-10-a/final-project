@@ -1,4 +1,5 @@
 <div class="background">
+  <br>
   <mat-card>
     <mat-spinner *ngIf="isLoading"></mat-spinner>
     <form (submit)="onSaveBenchmark(benchmarkForm)" #benchmarkForm="ngForm" *ngIf="!isLoading">

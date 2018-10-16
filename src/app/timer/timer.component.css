@@ -1,10 +1,43 @@
+button:focus {
+  outline: 0;
+}
 mat-card {
+  text-align: center;
+  min-width: 400px;
+}
+p {
+  font-size: 10em;
+  color: black;
+}
+
+.timer {
+  background-color: rgba(255, 255, 255, 0.849);
+  max-width: 75%;
+  top: 2em;
+  margin: auto;
+}
+
+.background {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: url('../../assets/images/swim2.jpg')
+    no-repeat center top;
+  background-size: cover;
+  content: '';
+  z-index: -1;
+  display: grid;
+}
+
+/*mat-card {
   position: absolute;
   top: 5em;
   left: 0;
   bottom: 0;
   right: 0;
-  background: url('https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&h=350')
+  /*background:('https://images.pexels.com/photos/261403/pexels-photo-261403.jpeg?auto=compress&cs=tinysrgb&h=350')
     no-repeat center top;
   background-size: cover;
   content: '';
@@ -32,4 +65,6 @@ button {
   text-align: center;
   text-decoration: none;
   font-size: 35px;
-}
+}*/
+
+

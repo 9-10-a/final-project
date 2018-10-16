@@ -1,13 +1,15 @@
 :host {
   display: block;
-  margin-top: 1rem;
+  margin-top: 2em;
 }
 .info-text {
+  z-index: -1;
   background-color: rgba(255, 255, 255, 0.849);
 }
 .benchmarks {
   color: inherit;
   width: 50%;
+  z-index: -1;
   background-color: rgba(255, 255, 255, 0.849);
 }
 .benchmarks:nth-child(odd) {

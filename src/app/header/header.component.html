@@ -1,8 +1,8 @@
-<mat-toolbar color="primary">
+<!-- <mat-toolbar color="primary">
   <span *ngIf="!userIsAuthenticated">
     <a routerLink="/home" routerLinkActive="mat-accent">SweatLog</a>
   </span>
-  <span *ngIf="userIsAuthenticated">
+  <span *ngIf="!userIsAuthenticated">
     <a routerLink="/profile" routerLinkActive="mat-accent">SweatLog</a>
   </span>
   <br>
@@ -11,12 +11,12 @@
   </span>
   <span class="spacer"></span>
   <ul>
-    <li *ngIf="!userIsAuthenticated">
+    <li *ngIf="userIsAuthenticated">
       <a mat-button routerLink="/auth/signup" routerLinkActive="mat-accent">Signup</a>
     </li>
   </ul>
   <ul>
-    <li *ngIf="!userIsAuthenticated">
+    <li *ngIf="userIsAuthenticated">
       <a mat-button routerLink="/auth/login" routerLinkActive="mat-accent">Login</a>
     </li>
   </ul>
@@ -31,17 +31,17 @@
     </li>
   </ul>
   <ul>
-    <li *ngIf="userIsAuthenticated">
+    <li *ngIf="!userIsAuthenticated">
       <a mat-button routerLink="/techniques" routerLinkActive="mat-accent">Techniques Guide</a>
     </li>
   </ul>
   <ul>
-      <li *ngIf="userIsAuthenticated">
-        <a mat-button routerLink="/map" routerLinkActive="mat-accent">Find a Gym</a>
-      </li>
-    </ul>
+    <li *ngIf="!userIsAuthenticated">
+      <a mat-button routerLink="/map" routerLinkActive="mat-accent">Find a Gym</a>
+    </li>
+  </ul>
   <ul>
-    <li *ngIf="userIsAuthenticated">
+    <li *ngIf="!userIsAuthenticated">
       <a mat-button routerLink="/timer" routerLinkActive="mat-accent">Timer</a>
     </li>
   </ul>
@@ -50,7 +50,7 @@
       <button mat-button (click)="onLogout()">Logout</button>
     </li>
   </ul>
-</mat-toolbar>
+</mat-toolbar> -->
 
 <!-- <script src="js/lib/angular.js"></script>
 <script src="js/lib/angular-animate.js"></script>

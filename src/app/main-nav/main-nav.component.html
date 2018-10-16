@@ -41,6 +41,11 @@
         </ul>
         <ul>
           <li *ngIf="userIsAuthenticated">
+            <a mat-list-item color="primary" routerLink="/map" routerLinkActive="mat-accent">Find a Gym</a>
+          </li>
+        </ul>
+        <ul>
+          <li *ngIf="userIsAuthenticated">
             <a mat-list-item color="primary" routerLink="/timer" routerLinkActive="mat-accent">Timer</a>
           </li>
         </ul>
@@ -95,6 +100,11 @@
             <a mat-button routerLink="/techniques" routerLinkActive="mat-accent">Techniques Guide</a>
           </li>
         </ul>
+        <ul class='topBar'>
+            <li *ngIf="userIsAuthenticated">
+              <a mat-button routerLink="/map" routerLinkActive="mat-accent">Find a Gym</a>
+            </li>
+          </ul>
         <ul class='topBar'>
           <li *ngIf="userIsAuthenticated">
             <a mat-button routerLink="/timer" routerLinkActive="mat-accent">Timer</a>

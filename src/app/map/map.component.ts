@@ -74,7 +74,7 @@ export class MapComponent {
   }
 }
 
-// just an interface for type safety.
+// an interface for type safety.
 interface Marker {
   lat: number;
   lng: number;

@@ -20,7 +20,9 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'profile/benchmarkcreate', component: BenchmarkCreateComponent },
-  { path: 'create', component: LogCreateComponent, canActivate: [AuthGuard] },
+  { path: 'create',
+    component: LogCreateComponent,
+    canActivate: [AuthGuard] },
   {
     path: 'profile-edit',
     component: ProfileEditComponent,
