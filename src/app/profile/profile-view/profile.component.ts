@@ -49,4 +49,18 @@ export class ProfileComponent implements OnInit, OnDestroy {
     this.profilesSub.unsubscribe();
     this.authStatusSub.unsubscribe();
   }
+
+  changeTheme() {
+    if (document.body.classList.contains('default-theme')) {
+      document.body.classList.remove('default-theme');
+      document.body.classList.add('one-theme');
+    } else if (document.body.classList.contains('one-theme')) {
+      document.body.classList.remove('one-theme');
+      document.body.classList.add('two-theme');
+    } else {
+      document.body.classList.remove('two-theme');
+      document.body.classList.add('default-theme');
+    }
+  }
 }
+
