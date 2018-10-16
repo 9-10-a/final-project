@@ -18,7 +18,7 @@ mat-spinner {
   z-index: -1;
   display: grid;
 }
-mat-card {
+.login-card {
   /* top: 3em; mat-card was not centering top and bottom (not including tool bar)*/
   margin: auto;
   background-color: rgba(255, 255, 255, 0.849);

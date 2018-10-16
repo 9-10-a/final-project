@@ -23,7 +23,7 @@ button {
   z-index: -1;
   display: grid;
 }
-mat-card {
+.log-create-card {
   max-width: 75%;
   margin: auto;
   /* top: 2em; */
