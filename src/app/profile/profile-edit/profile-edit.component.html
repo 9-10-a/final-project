@@ -1,5 +1,5 @@
 <div class="background"></div>
-<mat-card>
+<mat-card class="profile-card">
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <form (submit)="onSaveProfile(profileForm)" #profileForm="ngForm" *ngIf="!isLoading">
     <!-- Choose Avatar  -->
