@@ -1,5 +1,4 @@
 <div class="background"></div>
-<br> <!--  removed - caused mat-cards to sit at bottom of page instead of center-->
 <mat-card class="log-create-card">
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <form (submit)="onSaveLog(logForm)" #logForm="ngForm" *ngIf="!isLoading">
