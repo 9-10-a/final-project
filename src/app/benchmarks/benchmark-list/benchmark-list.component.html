@@ -16,9 +16,12 @@
   <ul>
     <li><strong>Result:</strong> {{ benchmark.content }}</li>
   </ul>
-  <a [routerLink]="['/edit-benchmark', benchmark.id]"><i class="material-icons">edit</i>
-  </a>
-  <a (click)="onDelete(benchmark.id)"><i class="material-icons">delete</i></a>
+  <ul>
+    <li> <a [routerLink]="['/edit-benchmark', benchmark.id]"><i class="material-icons">edit</i>
+      </a>
+      <a (click)="onDelete(benchmark.id)"><i class="material-icons">delete</i></a></li>
+  </ul>
+
 
   <!-- </mat-grid-tile> -->
 </mat-card>

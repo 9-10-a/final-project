@@ -1,4 +1,6 @@
-<div class="background"></div>
+<div class="background">
+  <div class="gradient"></div>
+</div>
 <mat-card class="timer-card">
   <p *ngIf="remainderSeconds < 10">{{timeMinutes}}:0{{remainderSeconds}}</p>
   <p *ngIf="remainderSeconds >= 10">{{timeMinutes}}:{{remainderSeconds}}</p>

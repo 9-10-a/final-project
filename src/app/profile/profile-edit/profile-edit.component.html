@@ -1,4 +1,6 @@
-<div class="background"></div>
+<div class="background">
+  <div class="gradient"></div>
+</div>
 <mat-card class="profile-card">
   <mat-spinner *ngIf="isLoading"></mat-spinner>
   <form (submit)="onSaveProfile(profileForm)" #profileForm="ngForm" *ngIf="!isLoading">

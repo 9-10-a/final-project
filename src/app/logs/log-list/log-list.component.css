@@ -2,7 +2,7 @@
   display: block;
   /*margin-top: 1rem;*/
   /*top: 2em;*/
-  margin-top:3em;
+  margin-top: 3em;
 }
 
 mat-spinner {
@@ -31,12 +31,23 @@ mat-spinner {
 
 .list {
   margin: auto;
-  background-color:rgba(255, 255, 255, 0.849);
+  background-color: rgba(255, 255, 255, 0.849);
   width: 80%;
 }
 .list-2 {
   margin: auto;
-  background-color:rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0);
 }
 
-
+@media (max-width: 700px) {
+  .gradient {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  }
+}
