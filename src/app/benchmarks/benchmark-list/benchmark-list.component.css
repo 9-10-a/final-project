@@ -9,6 +9,7 @@
 .benchmarks {
   color: inherit;
   width: 50%;
+  height: 175px;
   z-index: 0; /* changed from -1 to 0 to get same look if .info-text was -1 and click to add button works */
   background-color: rgba(255, 255, 255, 0.849);
 }
@@ -29,4 +30,16 @@ ul {
 a {
   color: inherit;
   text-decoration: none;
+}
+@media (max-width: 700px) {
+  .gradient {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
+  }
 }

@@ -25,7 +25,7 @@ button {
 }
 .log-create-card {
   max-width: 75%;
-  margin: auto;;
+  margin: auto;
   top: 2em;
   background-color: rgba(255, 255, 255, 0.849);
 }
@@ -65,5 +65,15 @@ button {
     max-width: 100%;
     right: 0;
     margin-left: 0%;
+  }
+  .gradient {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
   }
 }

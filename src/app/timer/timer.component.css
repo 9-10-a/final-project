@@ -34,9 +34,19 @@ p {
   display: grid;
 }
 /* added so number fit in card on smaller screens */
-@media (max-width: 675px) {
+@media (max-width: 700px) {
   p {
     font-size: 5em;
+  }
+  .gradient {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    content: '';
+    z-index: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0), rgb(255, 255, 255));
   }
 }
 
