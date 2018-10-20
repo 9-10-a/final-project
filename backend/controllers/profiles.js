@@ -49,16 +49,17 @@ exports.updateProfile = (req, res, next) => {
 
 exports.getProfiles = (req, res, next) => {
   const creator = req.userData.userId;
-  const profileQuery = Profile.find({ creator: creator })
+  Profile.find({ creator: creator })
+    .limit(1)
     .then(documents => {
       res.status(200).json({
-        message: 'Profiles fetched successfully!',
+        message: 'Profile fetched successfully!',
         profiles: documents
       });
     })
     .catch(error => {
       res.status(500).json({
-        message: 'Fetching posts failed!'
+        message: 'Fetching profile failed!'
       });
     });
 };
