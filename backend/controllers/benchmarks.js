@@ -49,6 +49,7 @@ exports.updateBenchmark = (req, res, next) => {
 exports.getBenchmarks = (req, res, next) => {
   const creator = req.userData.userId;
   Benchmark.find({ creator: creator })
+    .limit(4)
     .then(benchmarks => {
       res.status(200).json({
         message: 'Benchmarks fetched successfully!',
