@@ -1,4 +1,4 @@
-# THE Final Project for Bethel School of Technology and Woz-U
+# The Final Project for Bethel School of Technology and Woz-U
 
 * Open CLI window
 1. *cd final-project*
