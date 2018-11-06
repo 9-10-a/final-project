@@ -1,20 +1,25 @@
-# final-project
+# THE Final Project for Bethel School of Technology and Woz-U
 
-SOURCE CONTROL (https://vimeo.com/271944969)
-
-DEVELOPMENT (https://vimeo.com/284189974)
 * Open CLI window
-1. *cd group-project*
+1. *cd final-project*
 2. *npm install* 
-3. *ng build*
-4. *npm start*
-* Your app will be served on port 8080
+3. *ng serve*
+4. *npm run start:server* (for connection to database)
+* The app will be served on port 4200
 
-PRODUCTION (https://vimeo.com/285352470)
-* To deploy your app to Heroku, complete the following steps:
-1. Signup for a free Heroku account at https://www.heroku.com
-2. Create a new Heroku app inside the dashboard
-3. Once created, select the Github integration option
-4. After you've connected to Github, you'll need to select the repo you are connecting to (final-project)
-5. Once it has been selected, scroll down to Manual Deploy and click the Deploy button
-* After the initial deploy, your team will need to continue to deploy small features as they are completed in development. Do not attempt to deploy several new features at once as it often will result in production issues.
+# Welcome to SweatLog!
+The one stop logging app for all your fitness needs! If you are a beginner or a pro, with our simple app you can
+
+Log any type of workout
+Track your goals or personal best in the Benchmark section
+Use the built in timer
+Or use our technique database to learn new movements
+
+# About SweatLog
+
+The name of our web application is SweatLog. It was developed with the fitness enthusiast in mind. The features of SweatLog include logging your workouts, a "Benchmarks" section to record personal records or goals, a map to find a gym near you, a timer, and a technique guide for movements.
+
+The technologies used were HTML, CSS, JavaScript, Angular, Angular Material, Nodejs, and Express. GitHub was used for source control and for our project board to keep up with weekly sprints. We used MongoDB and mLab for our database. The app was deployed on Heroku. SweatLog was built for use on a desktop or mobile device.
+
+# Deployed Link
+https://sweatlog.herokuapp.com/
