@@ -41,7 +41,7 @@
     "core-js": "^2.5.4",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
-    "jsonwebtoken": "^8.3.0",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.1.2",
     "mongoose-unique-validator": "^2.0.2",
     "ng2-simple-timer": "^6.0.0",
